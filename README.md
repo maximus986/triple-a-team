@@ -33,22 +33,18 @@
 
     Edit `src/pages/index.js` to see your site update in real-time!
 
-4.  **Learn more**
+## **Features**
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+1. Typescript - code gen,
+2. ESLint,
+3. Prettier,
+   4.Theme UI (theme),
+4. Emotion and Emotion styled component,
+5. Core components (Container, GatsbyLink, Layout, Seo, Button, Header bare minimum...),
+6. Editor config,
+   8.Core gatsby plugins (Helmet, Sitemap, Robots, Layout (Proanalytica))
+7. Absolute imports (Proanalytica),
+8. Form template (A few input fields, some required, some not. Validation, Netlify submit),
+9. Hooks (useSiteMetadata...).
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+TODO: Improve README!
