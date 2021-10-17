@@ -9,8 +9,7 @@
   "lint-staged": {
     "./**/*.{js,jsx,ts,tsx}": [
       "prettier",
-      "eslint",
-      "git add"
+      "eslint"
     ]
   },
   "scripts": {
