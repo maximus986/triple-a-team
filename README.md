@@ -45,6 +45,8 @@
    8.Core gatsby plugins (Helmet, Sitemap, Robots, Layout (Proanalytica))
 7. Absolute imports (Proanalytica),
 8. Form template (A few input fields, some required, some not. Validation, Netlify submit),
-9. Hooks (useSiteMetadata...).
+9. Hooks (useSiteMetadata...),
+10. package.json scripts,
+11. Git hooks
 
 TODO: Improve README!
