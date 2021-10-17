@@ -8,6 +8,20 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     {
+      resolve: `gatsby-plugin-theme-ui`,
+      options: {
+        preset: '@theme-ui/preset-bootstrap',
+      },
+    },
+
+    {
+      resolve: 'gatsby-theme-style-guide',
+      options: {
+        // sets path for generated page (The page is rendering Theme UI styles in a style guide format)
+        basePath: '/style-guide',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/images/icon.png',

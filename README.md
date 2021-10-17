@@ -38,15 +38,18 @@
 - [x] Typescript - code gen,
 - [x] ESLint,
 - [x] Prettier,
-- [ ] Git hooks,
+- [x] Git hooks,
+- [x] package.json scripts,
 - [ ] Theme UI (theme),
 - [ ] Emotion and Emotion styled component,
 - [ ] Core components (Container, GatsbyLink, Layout, Seo, Button, Header bare minimum...),
-- [ ] Editor config,
 - [ ] Core gatsby plugins (Helmet, Sitemap, Robots, Layout (Proanalytica))
 - [ ] Absolute imports (Proanalytica),
 - [ ] Form template (A few input fields, some required, some not. Validation, Netlify submit),
 - [ ] Hooks (useSiteMetadata...),
-- [ ] package.json scripts,
+- [ ] Fonts,
+- [ ] Netlify deploy via cli ?
 
 TODO: Improve README!
+
+TODO: How to start project. Clone repo, install dependencies (git hooks stuff...)

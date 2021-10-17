@@ -249,8 +249,6 @@ type Site = Node & {
   readonly siteMetadata: Maybe<SiteSiteMetadata>;
   readonly port: Maybe<Scalars['Int']>;
   readonly host: Maybe<Scalars['String']>;
-  readonly polyfill: Maybe<Scalars['Boolean']>;
-  readonly pathPrefix: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
   readonly parent: Maybe<Node>;
   readonly children: ReadonlyArray<Node>;
@@ -291,13 +289,13 @@ type SitePage = Node & {
   readonly internalComponentName: Scalars['String'];
   readonly componentChunkName: Scalars['String'];
   readonly matchPath: Maybe<Scalars['String']>;
+  readonly isCreatedByStatefulCreatePages: Maybe<Scalars['Boolean']>;
+  readonly pluginCreator: Maybe<SitePlugin>;
+  readonly pluginCreatorId: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
   readonly parent: Maybe<Node>;
   readonly children: ReadonlyArray<Node>;
   readonly internal: Internal;
-  readonly isCreatedByStatefulCreatePages: Maybe<Scalars['Boolean']>;
-  readonly pluginCreator: Maybe<SitePlugin>;
-  readonly pluginCreatorId: Maybe<Scalars['String']>;
 };
 
 type SitePlugin = Node & {
@@ -321,6 +319,7 @@ type SitePluginPluginOptions = {
   readonly createLinkInHead: Maybe<Scalars['Boolean']>;
   readonly entryLimit: Maybe<Scalars['Int']>;
   readonly query: Maybe<Scalars['String']>;
+  readonly preset: Maybe<SitePluginPluginOptionsPreset>;
   readonly icon: Maybe<Scalars['String']>;
   readonly legacy: Maybe<Scalars['Boolean']>;
   readonly theme_color_in_head: Maybe<Scalars['Boolean']>;
@@ -335,6 +334,717 @@ type SitePluginPluginOptions = {
   readonly allExtensions: Maybe<Scalars['Boolean']>;
   readonly isTSX: Maybe<Scalars['Boolean']>;
   readonly jsxPragma: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPreset = {
+  readonly baseColors: Maybe<SitePluginPluginOptionsPresetBaseColors>;
+  readonly bootstrap: Maybe<SitePluginPluginOptionsPresetBootstrap>;
+  readonly breakpoints: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly colors: Maybe<SitePluginPluginOptionsPresetColors>;
+  readonly default: Maybe<SitePluginPluginOptionsPresetDefault>;
+  readonly fontSizes: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly fontWeights: Maybe<SitePluginPluginOptionsPresetFontWeights>;
+  readonly fonts: Maybe<SitePluginPluginOptionsPresetFonts>;
+  readonly lineHeights: Maybe<SitePluginPluginOptionsPresetLineHeights>;
+  readonly radii: Maybe<SitePluginPluginOptionsPresetRadii>;
+  readonly shadows: Maybe<SitePluginPluginOptionsPresetShadows>;
+  readonly sizes: Maybe<SitePluginPluginOptionsPresetSizes>;
+  readonly space: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly styles: Maybe<SitePluginPluginOptionsPresetStyles>;
+};
+
+type SitePluginPluginOptionsPresetBaseColors = {
+  readonly white: Maybe<Scalars['String']>;
+  readonly black: Maybe<Scalars['String']>;
+  readonly gray: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly blue: Maybe<Scalars['String']>;
+  readonly indigo: Maybe<Scalars['String']>;
+  readonly purple: Maybe<Scalars['String']>;
+  readonly pink: Maybe<Scalars['String']>;
+  readonly red: Maybe<Scalars['String']>;
+  readonly orange: Maybe<Scalars['String']>;
+  readonly yellow: Maybe<Scalars['String']>;
+  readonly green: Maybe<Scalars['String']>;
+  readonly teal: Maybe<Scalars['String']>;
+  readonly cyan: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrap = {
+  readonly breakpoints: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly colors: Maybe<SitePluginPluginOptionsPresetBootstrapColors>;
+  readonly space: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly fonts: Maybe<SitePluginPluginOptionsPresetBootstrapFonts>;
+  readonly fontSizes: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly fontWeights: Maybe<SitePluginPluginOptionsPresetBootstrapFontWeights>;
+  readonly lineHeights: Maybe<SitePluginPluginOptionsPresetBootstrapLineHeights>;
+  readonly sizes: Maybe<SitePluginPluginOptionsPresetBootstrapSizes>;
+  readonly shadows: Maybe<SitePluginPluginOptionsPresetBootstrapShadows>;
+  readonly radii: Maybe<SitePluginPluginOptionsPresetBootstrapRadii>;
+  readonly text: Maybe<SitePluginPluginOptionsPresetBootstrapText>;
+  readonly styles: Maybe<SitePluginPluginOptionsPresetBootstrapStyles>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapColors = {
+  readonly white: Maybe<Scalars['String']>;
+  readonly black: Maybe<Scalars['String']>;
+  readonly gray: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly blue: Maybe<Scalars['String']>;
+  readonly indigo: Maybe<Scalars['String']>;
+  readonly purple: Maybe<Scalars['String']>;
+  readonly pink: Maybe<Scalars['String']>;
+  readonly red: Maybe<Scalars['String']>;
+  readonly orange: Maybe<Scalars['String']>;
+  readonly yellow: Maybe<Scalars['String']>;
+  readonly green: Maybe<Scalars['String']>;
+  readonly teal: Maybe<Scalars['String']>;
+  readonly cyan: Maybe<Scalars['String']>;
+  readonly grayDark: Maybe<Scalars['String']>;
+  readonly text: Maybe<Scalars['String']>;
+  readonly background: Maybe<Scalars['String']>;
+  readonly primary: Maybe<Scalars['String']>;
+  readonly secondary: Maybe<Scalars['String']>;
+  readonly muted: Maybe<Scalars['String']>;
+  readonly success: Maybe<Scalars['String']>;
+  readonly info: Maybe<Scalars['String']>;
+  readonly warning: Maybe<Scalars['String']>;
+  readonly danger: Maybe<Scalars['String']>;
+  readonly light: Maybe<Scalars['String']>;
+  readonly dark: Maybe<Scalars['String']>;
+  readonly textMuted: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapFonts = {
+  readonly body: Maybe<Scalars['String']>;
+  readonly heading: Maybe<Scalars['String']>;
+  readonly monospace: Maybe<Scalars['String']>;
+  readonly sans: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapFontWeights = {
+  readonly body: Maybe<Scalars['Int']>;
+  readonly heading: Maybe<Scalars['Int']>;
+  readonly bold: Maybe<Scalars['Int']>;
+  readonly light: Maybe<Scalars['Int']>;
+  readonly normal: Maybe<Scalars['Int']>;
+  readonly display: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapLineHeights = {
+  readonly body: Maybe<Scalars['Float']>;
+  readonly heading: Maybe<Scalars['Float']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapSizes = {
+  readonly sm: Maybe<Scalars['Int']>;
+  readonly md: Maybe<Scalars['Int']>;
+  readonly lg: Maybe<Scalars['Int']>;
+  readonly xl: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapShadows = {
+  readonly default: Maybe<Scalars['String']>;
+  readonly sm: Maybe<Scalars['String']>;
+  readonly lg: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapRadii = {
+  readonly default: Maybe<Scalars['String']>;
+  readonly sm: Maybe<Scalars['String']>;
+  readonly lg: Maybe<Scalars['String']>;
+  readonly pill: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapText = {
+  readonly heading: Maybe<SitePluginPluginOptionsPresetBootstrapTextHeading>;
+  readonly display: Maybe<SitePluginPluginOptionsPresetBootstrapTextDisplay>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapTextHeading = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly mt: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapTextDisplay = {
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStyles = {
+  readonly root: Maybe<SitePluginPluginOptionsPresetBootstrapStylesRoot>;
+  readonly a: Maybe<SitePluginPluginOptionsPresetBootstrapStylesA>;
+  readonly p: Maybe<SitePluginPluginOptionsPresetBootstrapStylesP>;
+  readonly h1: Maybe<SitePluginPluginOptionsPresetBootstrapStylesH1>;
+  readonly h2: Maybe<SitePluginPluginOptionsPresetBootstrapStylesH2>;
+  readonly h3: Maybe<SitePluginPluginOptionsPresetBootstrapStylesH3>;
+  readonly h4: Maybe<SitePluginPluginOptionsPresetBootstrapStylesH4>;
+  readonly h5: Maybe<SitePluginPluginOptionsPresetBootstrapStylesH5>;
+  readonly h6: Maybe<SitePluginPluginOptionsPresetBootstrapStylesH6>;
+  readonly blockquote: Maybe<SitePluginPluginOptionsPresetBootstrapStylesBlockquote>;
+  readonly table: Maybe<SitePluginPluginOptionsPresetBootstrapStylesTable>;
+  readonly th: Maybe<SitePluginPluginOptionsPresetBootstrapStylesTh>;
+  readonly td: Maybe<SitePluginPluginOptionsPresetBootstrapStylesTd>;
+  readonly inlineCode: Maybe<SitePluginPluginOptionsPresetBootstrapStylesInlineCode>;
+  readonly img: Maybe<SitePluginPluginOptionsPresetBootstrapStylesImg>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesRoot = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesA = {
+  readonly color: Maybe<Scalars['String']>;
+  readonly textDecoration: Maybe<Scalars['String']>;
+  readonly _hover: Maybe<SitePluginPluginOptionsPresetBootstrapStylesA_hover>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesA_hover = {
+  readonly textDecoration: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesP = {
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesH1 = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly mt: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly fontSize: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesH2 = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly mt: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly fontSize: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesH3 = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly mt: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly fontSize: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesH4 = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly mt: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly fontSize: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesH5 = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly mt: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly fontSize: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesH6 = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly mt: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly fontSize: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesBlockquote = {
+  readonly fontSize: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesTable = {
+  readonly width: Maybe<Scalars['String']>;
+  readonly marginBottom: Maybe<Scalars['Int']>;
+  readonly color: Maybe<Scalars['String']>;
+  readonly borderCollapse: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesTh = {
+  readonly verticalAlign: Maybe<Scalars['String']>;
+  readonly borderTopWidth: Maybe<Scalars['Int']>;
+  readonly borderTopStyle: Maybe<Scalars['String']>;
+  readonly borderTopColor: Maybe<Scalars['String']>;
+  readonly borderBottomWidth: Maybe<Scalars['Int']>;
+  readonly borderBottomStyle: Maybe<Scalars['String']>;
+  readonly borderBottomColor: Maybe<Scalars['String']>;
+  readonly padding: Maybe<Scalars['String']>;
+  readonly textAlign: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesTd = {
+  readonly borderBottomWidth: Maybe<Scalars['Int']>;
+  readonly borderBottomStyle: Maybe<Scalars['String']>;
+  readonly borderBottomColor: Maybe<Scalars['String']>;
+  readonly verticalAlign: Maybe<Scalars['String']>;
+  readonly padding: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesInlineCode = {
+  readonly color: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesImg = {
+  readonly maxWidth: Maybe<Scalars['String']>;
+  readonly height: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetColors = {
+  readonly white: Maybe<Scalars['String']>;
+  readonly black: Maybe<Scalars['String']>;
+  readonly gray: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly blue: Maybe<Scalars['String']>;
+  readonly indigo: Maybe<Scalars['String']>;
+  readonly purple: Maybe<Scalars['String']>;
+  readonly pink: Maybe<Scalars['String']>;
+  readonly red: Maybe<Scalars['String']>;
+  readonly orange: Maybe<Scalars['String']>;
+  readonly yellow: Maybe<Scalars['String']>;
+  readonly green: Maybe<Scalars['String']>;
+  readonly teal: Maybe<Scalars['String']>;
+  readonly cyan: Maybe<Scalars['String']>;
+  readonly grayDark: Maybe<Scalars['String']>;
+  readonly text: Maybe<Scalars['String']>;
+  readonly background: Maybe<Scalars['String']>;
+  readonly primary: Maybe<Scalars['String']>;
+  readonly secondary: Maybe<Scalars['String']>;
+  readonly muted: Maybe<Scalars['String']>;
+  readonly success: Maybe<Scalars['String']>;
+  readonly info: Maybe<Scalars['String']>;
+  readonly warning: Maybe<Scalars['String']>;
+  readonly danger: Maybe<Scalars['String']>;
+  readonly light: Maybe<Scalars['String']>;
+  readonly dark: Maybe<Scalars['String']>;
+  readonly textMuted: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetDefault = {
+  readonly breakpoints: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly colors: Maybe<SitePluginPluginOptionsPresetDefaultColors>;
+  readonly space: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly fonts: Maybe<SitePluginPluginOptionsPresetDefaultFonts>;
+  readonly fontSizes: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly fontWeights: Maybe<SitePluginPluginOptionsPresetDefaultFontWeights>;
+  readonly lineHeights: Maybe<SitePluginPluginOptionsPresetDefaultLineHeights>;
+  readonly sizes: Maybe<SitePluginPluginOptionsPresetDefaultSizes>;
+  readonly shadows: Maybe<SitePluginPluginOptionsPresetDefaultShadows>;
+  readonly radii: Maybe<SitePluginPluginOptionsPresetDefaultRadii>;
+  readonly text: Maybe<SitePluginPluginOptionsPresetDefaultText>;
+  readonly styles: Maybe<SitePluginPluginOptionsPresetDefaultStyles>;
+};
+
+type SitePluginPluginOptionsPresetDefaultColors = {
+  readonly white: Maybe<Scalars['String']>;
+  readonly black: Maybe<Scalars['String']>;
+  readonly gray: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly blue: Maybe<Scalars['String']>;
+  readonly indigo: Maybe<Scalars['String']>;
+  readonly purple: Maybe<Scalars['String']>;
+  readonly pink: Maybe<Scalars['String']>;
+  readonly red: Maybe<Scalars['String']>;
+  readonly orange: Maybe<Scalars['String']>;
+  readonly yellow: Maybe<Scalars['String']>;
+  readonly green: Maybe<Scalars['String']>;
+  readonly teal: Maybe<Scalars['String']>;
+  readonly cyan: Maybe<Scalars['String']>;
+  readonly grayDark: Maybe<Scalars['String']>;
+  readonly text: Maybe<Scalars['String']>;
+  readonly background: Maybe<Scalars['String']>;
+  readonly primary: Maybe<Scalars['String']>;
+  readonly secondary: Maybe<Scalars['String']>;
+  readonly muted: Maybe<Scalars['String']>;
+  readonly success: Maybe<Scalars['String']>;
+  readonly info: Maybe<Scalars['String']>;
+  readonly warning: Maybe<Scalars['String']>;
+  readonly danger: Maybe<Scalars['String']>;
+  readonly light: Maybe<Scalars['String']>;
+  readonly dark: Maybe<Scalars['String']>;
+  readonly textMuted: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultFonts = {
+  readonly body: Maybe<Scalars['String']>;
+  readonly heading: Maybe<Scalars['String']>;
+  readonly monospace: Maybe<Scalars['String']>;
+  readonly sans: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultFontWeights = {
+  readonly body: Maybe<Scalars['Int']>;
+  readonly heading: Maybe<Scalars['Int']>;
+  readonly bold: Maybe<Scalars['Int']>;
+  readonly light: Maybe<Scalars['Int']>;
+  readonly normal: Maybe<Scalars['Int']>;
+  readonly display: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultLineHeights = {
+  readonly body: Maybe<Scalars['Float']>;
+  readonly heading: Maybe<Scalars['Float']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultSizes = {
+  readonly sm: Maybe<Scalars['Int']>;
+  readonly md: Maybe<Scalars['Int']>;
+  readonly lg: Maybe<Scalars['Int']>;
+  readonly xl: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultShadows = {
+  readonly default: Maybe<Scalars['String']>;
+  readonly sm: Maybe<Scalars['String']>;
+  readonly lg: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultRadii = {
+  readonly default: Maybe<Scalars['String']>;
+  readonly sm: Maybe<Scalars['String']>;
+  readonly lg: Maybe<Scalars['String']>;
+  readonly pill: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultText = {
+  readonly heading: Maybe<SitePluginPluginOptionsPresetDefaultTextHeading>;
+  readonly display: Maybe<SitePluginPluginOptionsPresetDefaultTextDisplay>;
+};
+
+type SitePluginPluginOptionsPresetDefaultTextHeading = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly mt: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultTextDisplay = {
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStyles = {
+  readonly root: Maybe<SitePluginPluginOptionsPresetDefaultStylesRoot>;
+  readonly a: Maybe<SitePluginPluginOptionsPresetDefaultStylesA>;
+  readonly p: Maybe<SitePluginPluginOptionsPresetDefaultStylesP>;
+  readonly h1: Maybe<SitePluginPluginOptionsPresetDefaultStylesH1>;
+  readonly h2: Maybe<SitePluginPluginOptionsPresetDefaultStylesH2>;
+  readonly h3: Maybe<SitePluginPluginOptionsPresetDefaultStylesH3>;
+  readonly h4: Maybe<SitePluginPluginOptionsPresetDefaultStylesH4>;
+  readonly h5: Maybe<SitePluginPluginOptionsPresetDefaultStylesH5>;
+  readonly h6: Maybe<SitePluginPluginOptionsPresetDefaultStylesH6>;
+  readonly blockquote: Maybe<SitePluginPluginOptionsPresetDefaultStylesBlockquote>;
+  readonly table: Maybe<SitePluginPluginOptionsPresetDefaultStylesTable>;
+  readonly th: Maybe<SitePluginPluginOptionsPresetDefaultStylesTh>;
+  readonly td: Maybe<SitePluginPluginOptionsPresetDefaultStylesTd>;
+  readonly inlineCode: Maybe<SitePluginPluginOptionsPresetDefaultStylesInlineCode>;
+  readonly img: Maybe<SitePluginPluginOptionsPresetDefaultStylesImg>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesRoot = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesA = {
+  readonly color: Maybe<Scalars['String']>;
+  readonly textDecoration: Maybe<Scalars['String']>;
+  readonly _hover: Maybe<SitePluginPluginOptionsPresetDefaultStylesA_hover>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesA_hover = {
+  readonly textDecoration: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesP = {
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesH1 = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly mt: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly fontSize: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesH2 = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly mt: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly fontSize: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesH3 = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly mt: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly fontSize: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesH4 = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly mt: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly fontSize: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesH5 = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly mt: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly fontSize: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesH6 = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly mt: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly fontSize: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesBlockquote = {
+  readonly fontSize: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesTable = {
+  readonly width: Maybe<Scalars['String']>;
+  readonly marginBottom: Maybe<Scalars['Int']>;
+  readonly color: Maybe<Scalars['String']>;
+  readonly borderCollapse: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesTh = {
+  readonly verticalAlign: Maybe<Scalars['String']>;
+  readonly borderTopWidth: Maybe<Scalars['Int']>;
+  readonly borderTopStyle: Maybe<Scalars['String']>;
+  readonly borderTopColor: Maybe<Scalars['String']>;
+  readonly borderBottomWidth: Maybe<Scalars['Int']>;
+  readonly borderBottomStyle: Maybe<Scalars['String']>;
+  readonly borderBottomColor: Maybe<Scalars['String']>;
+  readonly padding: Maybe<Scalars['String']>;
+  readonly textAlign: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesTd = {
+  readonly borderBottomWidth: Maybe<Scalars['Int']>;
+  readonly borderBottomStyle: Maybe<Scalars['String']>;
+  readonly borderBottomColor: Maybe<Scalars['String']>;
+  readonly verticalAlign: Maybe<Scalars['String']>;
+  readonly padding: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesInlineCode = {
+  readonly color: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesImg = {
+  readonly maxWidth: Maybe<Scalars['String']>;
+  readonly height: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetFontWeights = {
+  readonly body: Maybe<Scalars['Int']>;
+  readonly heading: Maybe<Scalars['Int']>;
+  readonly bold: Maybe<Scalars['Int']>;
+  readonly light: Maybe<Scalars['Int']>;
+  readonly normal: Maybe<Scalars['Int']>;
+  readonly display: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetFonts = {
+  readonly body: Maybe<Scalars['String']>;
+  readonly heading: Maybe<Scalars['String']>;
+  readonly monospace: Maybe<Scalars['String']>;
+  readonly sans: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetLineHeights = {
+  readonly body: Maybe<Scalars['Float']>;
+  readonly heading: Maybe<Scalars['Float']>;
+};
+
+type SitePluginPluginOptionsPresetRadii = {
+  readonly default: Maybe<Scalars['String']>;
+  readonly sm: Maybe<Scalars['String']>;
+  readonly lg: Maybe<Scalars['String']>;
+  readonly pill: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetShadows = {
+  readonly default: Maybe<Scalars['String']>;
+  readonly sm: Maybe<Scalars['String']>;
+  readonly lg: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetSizes = {
+  readonly sm: Maybe<Scalars['Int']>;
+  readonly md: Maybe<Scalars['Int']>;
+  readonly lg: Maybe<Scalars['Int']>;
+  readonly xl: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetStyles = {
+  readonly root: Maybe<SitePluginPluginOptionsPresetStylesRoot>;
+  readonly a: Maybe<SitePluginPluginOptionsPresetStylesA>;
+  readonly p: Maybe<SitePluginPluginOptionsPresetStylesP>;
+  readonly h1: Maybe<SitePluginPluginOptionsPresetStylesH1>;
+  readonly h2: Maybe<SitePluginPluginOptionsPresetStylesH2>;
+  readonly h3: Maybe<SitePluginPluginOptionsPresetStylesH3>;
+  readonly h4: Maybe<SitePluginPluginOptionsPresetStylesH4>;
+  readonly h5: Maybe<SitePluginPluginOptionsPresetStylesH5>;
+  readonly h6: Maybe<SitePluginPluginOptionsPresetStylesH6>;
+  readonly blockquote: Maybe<SitePluginPluginOptionsPresetStylesBlockquote>;
+  readonly table: Maybe<SitePluginPluginOptionsPresetStylesTable>;
+  readonly th: Maybe<SitePluginPluginOptionsPresetStylesTh>;
+  readonly td: Maybe<SitePluginPluginOptionsPresetStylesTd>;
+  readonly inlineCode: Maybe<SitePluginPluginOptionsPresetStylesInlineCode>;
+  readonly img: Maybe<SitePluginPluginOptionsPresetStylesImg>;
+};
+
+type SitePluginPluginOptionsPresetStylesRoot = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetStylesA = {
+  readonly color: Maybe<Scalars['String']>;
+  readonly textDecoration: Maybe<Scalars['String']>;
+  readonly _hover: Maybe<SitePluginPluginOptionsPresetStylesA_hover>;
+};
+
+type SitePluginPluginOptionsPresetStylesA_hover = {
+  readonly textDecoration: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetStylesP = {
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetStylesH1 = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly mt: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly fontSize: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetStylesH2 = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly mt: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly fontSize: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetStylesH3 = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly mt: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly fontSize: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetStylesH4 = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly mt: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly fontSize: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetStylesH5 = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly mt: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly fontSize: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetStylesH6 = {
+  readonly fontFamily: Maybe<Scalars['String']>;
+  readonly fontWeight: Maybe<Scalars['String']>;
+  readonly lineHeight: Maybe<Scalars['String']>;
+  readonly mt: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+  readonly fontSize: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetStylesBlockquote = {
+  readonly fontSize: Maybe<Scalars['Int']>;
+  readonly mb: Maybe<Scalars['Int']>;
+};
+
+type SitePluginPluginOptionsPresetStylesTable = {
+  readonly width: Maybe<Scalars['String']>;
+  readonly marginBottom: Maybe<Scalars['Int']>;
+  readonly color: Maybe<Scalars['String']>;
+  readonly borderCollapse: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetStylesTh = {
+  readonly verticalAlign: Maybe<Scalars['String']>;
+  readonly borderTopWidth: Maybe<Scalars['Int']>;
+  readonly borderTopStyle: Maybe<Scalars['String']>;
+  readonly borderTopColor: Maybe<Scalars['String']>;
+  readonly borderBottomWidth: Maybe<Scalars['Int']>;
+  readonly borderBottomStyle: Maybe<Scalars['String']>;
+  readonly borderBottomColor: Maybe<Scalars['String']>;
+  readonly padding: Maybe<Scalars['String']>;
+  readonly textAlign: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetStylesTd = {
+  readonly borderBottomWidth: Maybe<Scalars['Int']>;
+  readonly borderBottomStyle: Maybe<Scalars['String']>;
+  readonly borderBottomColor: Maybe<Scalars['String']>;
+  readonly verticalAlign: Maybe<Scalars['String']>;
+  readonly padding: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetStylesInlineCode = {
+  readonly color: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPresetStylesImg = {
+  readonly maxWidth: Maybe<Scalars['String']>;
+  readonly height: Maybe<Scalars['String']>;
 };
 
 type SitePluginPluginOptionsEmitSchema = {
@@ -518,8 +1228,6 @@ type Query_siteArgs = {
   siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
   port: Maybe<IntQueryOperatorInput>;
   host: Maybe<StringQueryOperatorInput>;
-  polyfill: Maybe<BooleanQueryOperatorInput>;
-  pathPrefix: Maybe<StringQueryOperatorInput>;
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
@@ -564,13 +1272,13 @@ type Query_sitePageArgs = {
   internalComponentName: Maybe<StringQueryOperatorInput>;
   componentChunkName: Maybe<StringQueryOperatorInput>;
   matchPath: Maybe<StringQueryOperatorInput>;
+  isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
+  pluginCreator: Maybe<SitePluginFilterInput>;
+  pluginCreatorId: Maybe<StringQueryOperatorInput>;
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
-  isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
-  pluginCreator: Maybe<SitePluginFilterInput>;
-  pluginCreatorId: Maybe<StringQueryOperatorInput>;
 };
 
 
@@ -1280,8 +1988,6 @@ type SiteFieldsEnum =
   | 'siteMetadata.siteUrl'
   | 'port'
   | 'host'
-  | 'polyfill'
-  | 'pathPrefix'
   | 'id'
   | 'parent.id'
   | 'parent.parent.id'
@@ -1415,8 +2121,6 @@ type SiteFilterInput = {
   readonly siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
   readonly port: Maybe<IntQueryOperatorInput>;
   readonly host: Maybe<StringQueryOperatorInput>;
-  readonly polyfill: Maybe<BooleanQueryOperatorInput>;
-  readonly pathPrefix: Maybe<StringQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
   readonly parent: Maybe<NodeFilterInput>;
   readonly children: Maybe<NodeFilterListInput>;
@@ -1649,6 +2353,7 @@ type SitePluginPluginOptionsFilterInput = {
   readonly createLinkInHead: Maybe<BooleanQueryOperatorInput>;
   readonly entryLimit: Maybe<IntQueryOperatorInput>;
   readonly query: Maybe<StringQueryOperatorInput>;
+  readonly preset: Maybe<SitePluginPluginOptionsPresetFilterInput>;
   readonly icon: Maybe<StringQueryOperatorInput>;
   readonly legacy: Maybe<BooleanQueryOperatorInput>;
   readonly theme_color_in_head: Maybe<BooleanQueryOperatorInput>;
@@ -1663,6 +2368,717 @@ type SitePluginPluginOptionsFilterInput = {
   readonly allExtensions: Maybe<BooleanQueryOperatorInput>;
   readonly isTSX: Maybe<BooleanQueryOperatorInput>;
   readonly jsxPragma: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetFilterInput = {
+  readonly baseColors: Maybe<SitePluginPluginOptionsPresetBaseColorsFilterInput>;
+  readonly bootstrap: Maybe<SitePluginPluginOptionsPresetBootstrapFilterInput>;
+  readonly breakpoints: Maybe<StringQueryOperatorInput>;
+  readonly colors: Maybe<SitePluginPluginOptionsPresetColorsFilterInput>;
+  readonly default: Maybe<SitePluginPluginOptionsPresetDefaultFilterInput>;
+  readonly fontSizes: Maybe<StringQueryOperatorInput>;
+  readonly fontWeights: Maybe<SitePluginPluginOptionsPresetFontWeightsFilterInput>;
+  readonly fonts: Maybe<SitePluginPluginOptionsPresetFontsFilterInput>;
+  readonly lineHeights: Maybe<SitePluginPluginOptionsPresetLineHeightsFilterInput>;
+  readonly radii: Maybe<SitePluginPluginOptionsPresetRadiiFilterInput>;
+  readonly shadows: Maybe<SitePluginPluginOptionsPresetShadowsFilterInput>;
+  readonly sizes: Maybe<SitePluginPluginOptionsPresetSizesFilterInput>;
+  readonly space: Maybe<StringQueryOperatorInput>;
+  readonly styles: Maybe<SitePluginPluginOptionsPresetStylesFilterInput>;
+};
+
+type SitePluginPluginOptionsPresetBaseColorsFilterInput = {
+  readonly white: Maybe<StringQueryOperatorInput>;
+  readonly black: Maybe<StringQueryOperatorInput>;
+  readonly gray: Maybe<StringQueryOperatorInput>;
+  readonly blue: Maybe<StringQueryOperatorInput>;
+  readonly indigo: Maybe<StringQueryOperatorInput>;
+  readonly purple: Maybe<StringQueryOperatorInput>;
+  readonly pink: Maybe<StringQueryOperatorInput>;
+  readonly red: Maybe<StringQueryOperatorInput>;
+  readonly orange: Maybe<StringQueryOperatorInput>;
+  readonly yellow: Maybe<StringQueryOperatorInput>;
+  readonly green: Maybe<StringQueryOperatorInput>;
+  readonly teal: Maybe<StringQueryOperatorInput>;
+  readonly cyan: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapFilterInput = {
+  readonly breakpoints: Maybe<StringQueryOperatorInput>;
+  readonly colors: Maybe<SitePluginPluginOptionsPresetBootstrapColorsFilterInput>;
+  readonly space: Maybe<StringQueryOperatorInput>;
+  readonly fonts: Maybe<SitePluginPluginOptionsPresetBootstrapFontsFilterInput>;
+  readonly fontSizes: Maybe<StringQueryOperatorInput>;
+  readonly fontWeights: Maybe<SitePluginPluginOptionsPresetBootstrapFontWeightsFilterInput>;
+  readonly lineHeights: Maybe<SitePluginPluginOptionsPresetBootstrapLineHeightsFilterInput>;
+  readonly sizes: Maybe<SitePluginPluginOptionsPresetBootstrapSizesFilterInput>;
+  readonly shadows: Maybe<SitePluginPluginOptionsPresetBootstrapShadowsFilterInput>;
+  readonly radii: Maybe<SitePluginPluginOptionsPresetBootstrapRadiiFilterInput>;
+  readonly text: Maybe<SitePluginPluginOptionsPresetBootstrapTextFilterInput>;
+  readonly styles: Maybe<SitePluginPluginOptionsPresetBootstrapStylesFilterInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapColorsFilterInput = {
+  readonly white: Maybe<StringQueryOperatorInput>;
+  readonly black: Maybe<StringQueryOperatorInput>;
+  readonly gray: Maybe<StringQueryOperatorInput>;
+  readonly blue: Maybe<StringQueryOperatorInput>;
+  readonly indigo: Maybe<StringQueryOperatorInput>;
+  readonly purple: Maybe<StringQueryOperatorInput>;
+  readonly pink: Maybe<StringQueryOperatorInput>;
+  readonly red: Maybe<StringQueryOperatorInput>;
+  readonly orange: Maybe<StringQueryOperatorInput>;
+  readonly yellow: Maybe<StringQueryOperatorInput>;
+  readonly green: Maybe<StringQueryOperatorInput>;
+  readonly teal: Maybe<StringQueryOperatorInput>;
+  readonly cyan: Maybe<StringQueryOperatorInput>;
+  readonly grayDark: Maybe<StringQueryOperatorInput>;
+  readonly text: Maybe<StringQueryOperatorInput>;
+  readonly background: Maybe<StringQueryOperatorInput>;
+  readonly primary: Maybe<StringQueryOperatorInput>;
+  readonly secondary: Maybe<StringQueryOperatorInput>;
+  readonly muted: Maybe<StringQueryOperatorInput>;
+  readonly success: Maybe<StringQueryOperatorInput>;
+  readonly info: Maybe<StringQueryOperatorInput>;
+  readonly warning: Maybe<StringQueryOperatorInput>;
+  readonly danger: Maybe<StringQueryOperatorInput>;
+  readonly light: Maybe<StringQueryOperatorInput>;
+  readonly dark: Maybe<StringQueryOperatorInput>;
+  readonly textMuted: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapFontsFilterInput = {
+  readonly body: Maybe<StringQueryOperatorInput>;
+  readonly heading: Maybe<StringQueryOperatorInput>;
+  readonly monospace: Maybe<StringQueryOperatorInput>;
+  readonly sans: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapFontWeightsFilterInput = {
+  readonly body: Maybe<IntQueryOperatorInput>;
+  readonly heading: Maybe<IntQueryOperatorInput>;
+  readonly bold: Maybe<IntQueryOperatorInput>;
+  readonly light: Maybe<IntQueryOperatorInput>;
+  readonly normal: Maybe<IntQueryOperatorInput>;
+  readonly display: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapLineHeightsFilterInput = {
+  readonly body: Maybe<FloatQueryOperatorInput>;
+  readonly heading: Maybe<FloatQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapSizesFilterInput = {
+  readonly sm: Maybe<IntQueryOperatorInput>;
+  readonly md: Maybe<IntQueryOperatorInput>;
+  readonly lg: Maybe<IntQueryOperatorInput>;
+  readonly xl: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapShadowsFilterInput = {
+  readonly default: Maybe<StringQueryOperatorInput>;
+  readonly sm: Maybe<StringQueryOperatorInput>;
+  readonly lg: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapRadiiFilterInput = {
+  readonly default: Maybe<StringQueryOperatorInput>;
+  readonly sm: Maybe<StringQueryOperatorInput>;
+  readonly lg: Maybe<StringQueryOperatorInput>;
+  readonly pill: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapTextFilterInput = {
+  readonly heading: Maybe<SitePluginPluginOptionsPresetBootstrapTextHeadingFilterInput>;
+  readonly display: Maybe<SitePluginPluginOptionsPresetBootstrapTextDisplayFilterInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapTextHeadingFilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly mt: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapTextDisplayFilterInput = {
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesFilterInput = {
+  readonly root: Maybe<SitePluginPluginOptionsPresetBootstrapStylesRootFilterInput>;
+  readonly a: Maybe<SitePluginPluginOptionsPresetBootstrapStylesAFilterInput>;
+  readonly p: Maybe<SitePluginPluginOptionsPresetBootstrapStylesPFilterInput>;
+  readonly h1: Maybe<SitePluginPluginOptionsPresetBootstrapStylesH1FilterInput>;
+  readonly h2: Maybe<SitePluginPluginOptionsPresetBootstrapStylesH2FilterInput>;
+  readonly h3: Maybe<SitePluginPluginOptionsPresetBootstrapStylesH3FilterInput>;
+  readonly h4: Maybe<SitePluginPluginOptionsPresetBootstrapStylesH4FilterInput>;
+  readonly h5: Maybe<SitePluginPluginOptionsPresetBootstrapStylesH5FilterInput>;
+  readonly h6: Maybe<SitePluginPluginOptionsPresetBootstrapStylesH6FilterInput>;
+  readonly blockquote: Maybe<SitePluginPluginOptionsPresetBootstrapStylesBlockquoteFilterInput>;
+  readonly table: Maybe<SitePluginPluginOptionsPresetBootstrapStylesTableFilterInput>;
+  readonly th: Maybe<SitePluginPluginOptionsPresetBootstrapStylesThFilterInput>;
+  readonly td: Maybe<SitePluginPluginOptionsPresetBootstrapStylesTdFilterInput>;
+  readonly inlineCode: Maybe<SitePluginPluginOptionsPresetBootstrapStylesInlineCodeFilterInput>;
+  readonly img: Maybe<SitePluginPluginOptionsPresetBootstrapStylesImgFilterInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesRootFilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesAFilterInput = {
+  readonly color: Maybe<StringQueryOperatorInput>;
+  readonly textDecoration: Maybe<StringQueryOperatorInput>;
+  readonly _hover: Maybe<SitePluginPluginOptionsPresetBootstrapStylesA_hoverFilterInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesA_hoverFilterInput = {
+  readonly textDecoration: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesPFilterInput = {
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesH1FilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly mt: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesH2FilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly mt: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesH3FilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly mt: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesH4FilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly mt: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesH5FilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly mt: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesH6FilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly mt: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesBlockquoteFilterInput = {
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesTableFilterInput = {
+  readonly width: Maybe<StringQueryOperatorInput>;
+  readonly marginBottom: Maybe<IntQueryOperatorInput>;
+  readonly color: Maybe<StringQueryOperatorInput>;
+  readonly borderCollapse: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesThFilterInput = {
+  readonly verticalAlign: Maybe<StringQueryOperatorInput>;
+  readonly borderTopWidth: Maybe<IntQueryOperatorInput>;
+  readonly borderTopStyle: Maybe<StringQueryOperatorInput>;
+  readonly borderTopColor: Maybe<StringQueryOperatorInput>;
+  readonly borderBottomWidth: Maybe<IntQueryOperatorInput>;
+  readonly borderBottomStyle: Maybe<StringQueryOperatorInput>;
+  readonly borderBottomColor: Maybe<StringQueryOperatorInput>;
+  readonly padding: Maybe<StringQueryOperatorInput>;
+  readonly textAlign: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesTdFilterInput = {
+  readonly borderBottomWidth: Maybe<IntQueryOperatorInput>;
+  readonly borderBottomStyle: Maybe<StringQueryOperatorInput>;
+  readonly borderBottomColor: Maybe<StringQueryOperatorInput>;
+  readonly verticalAlign: Maybe<StringQueryOperatorInput>;
+  readonly padding: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesInlineCodeFilterInput = {
+  readonly color: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetBootstrapStylesImgFilterInput = {
+  readonly maxWidth: Maybe<StringQueryOperatorInput>;
+  readonly height: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetColorsFilterInput = {
+  readonly white: Maybe<StringQueryOperatorInput>;
+  readonly black: Maybe<StringQueryOperatorInput>;
+  readonly gray: Maybe<StringQueryOperatorInput>;
+  readonly blue: Maybe<StringQueryOperatorInput>;
+  readonly indigo: Maybe<StringQueryOperatorInput>;
+  readonly purple: Maybe<StringQueryOperatorInput>;
+  readonly pink: Maybe<StringQueryOperatorInput>;
+  readonly red: Maybe<StringQueryOperatorInput>;
+  readonly orange: Maybe<StringQueryOperatorInput>;
+  readonly yellow: Maybe<StringQueryOperatorInput>;
+  readonly green: Maybe<StringQueryOperatorInput>;
+  readonly teal: Maybe<StringQueryOperatorInput>;
+  readonly cyan: Maybe<StringQueryOperatorInput>;
+  readonly grayDark: Maybe<StringQueryOperatorInput>;
+  readonly text: Maybe<StringQueryOperatorInput>;
+  readonly background: Maybe<StringQueryOperatorInput>;
+  readonly primary: Maybe<StringQueryOperatorInput>;
+  readonly secondary: Maybe<StringQueryOperatorInput>;
+  readonly muted: Maybe<StringQueryOperatorInput>;
+  readonly success: Maybe<StringQueryOperatorInput>;
+  readonly info: Maybe<StringQueryOperatorInput>;
+  readonly warning: Maybe<StringQueryOperatorInput>;
+  readonly danger: Maybe<StringQueryOperatorInput>;
+  readonly light: Maybe<StringQueryOperatorInput>;
+  readonly dark: Maybe<StringQueryOperatorInput>;
+  readonly textMuted: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultFilterInput = {
+  readonly breakpoints: Maybe<StringQueryOperatorInput>;
+  readonly colors: Maybe<SitePluginPluginOptionsPresetDefaultColorsFilterInput>;
+  readonly space: Maybe<StringQueryOperatorInput>;
+  readonly fonts: Maybe<SitePluginPluginOptionsPresetDefaultFontsFilterInput>;
+  readonly fontSizes: Maybe<StringQueryOperatorInput>;
+  readonly fontWeights: Maybe<SitePluginPluginOptionsPresetDefaultFontWeightsFilterInput>;
+  readonly lineHeights: Maybe<SitePluginPluginOptionsPresetDefaultLineHeightsFilterInput>;
+  readonly sizes: Maybe<SitePluginPluginOptionsPresetDefaultSizesFilterInput>;
+  readonly shadows: Maybe<SitePluginPluginOptionsPresetDefaultShadowsFilterInput>;
+  readonly radii: Maybe<SitePluginPluginOptionsPresetDefaultRadiiFilterInput>;
+  readonly text: Maybe<SitePluginPluginOptionsPresetDefaultTextFilterInput>;
+  readonly styles: Maybe<SitePluginPluginOptionsPresetDefaultStylesFilterInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultColorsFilterInput = {
+  readonly white: Maybe<StringQueryOperatorInput>;
+  readonly black: Maybe<StringQueryOperatorInput>;
+  readonly gray: Maybe<StringQueryOperatorInput>;
+  readonly blue: Maybe<StringQueryOperatorInput>;
+  readonly indigo: Maybe<StringQueryOperatorInput>;
+  readonly purple: Maybe<StringQueryOperatorInput>;
+  readonly pink: Maybe<StringQueryOperatorInput>;
+  readonly red: Maybe<StringQueryOperatorInput>;
+  readonly orange: Maybe<StringQueryOperatorInput>;
+  readonly yellow: Maybe<StringQueryOperatorInput>;
+  readonly green: Maybe<StringQueryOperatorInput>;
+  readonly teal: Maybe<StringQueryOperatorInput>;
+  readonly cyan: Maybe<StringQueryOperatorInput>;
+  readonly grayDark: Maybe<StringQueryOperatorInput>;
+  readonly text: Maybe<StringQueryOperatorInput>;
+  readonly background: Maybe<StringQueryOperatorInput>;
+  readonly primary: Maybe<StringQueryOperatorInput>;
+  readonly secondary: Maybe<StringQueryOperatorInput>;
+  readonly muted: Maybe<StringQueryOperatorInput>;
+  readonly success: Maybe<StringQueryOperatorInput>;
+  readonly info: Maybe<StringQueryOperatorInput>;
+  readonly warning: Maybe<StringQueryOperatorInput>;
+  readonly danger: Maybe<StringQueryOperatorInput>;
+  readonly light: Maybe<StringQueryOperatorInput>;
+  readonly dark: Maybe<StringQueryOperatorInput>;
+  readonly textMuted: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultFontsFilterInput = {
+  readonly body: Maybe<StringQueryOperatorInput>;
+  readonly heading: Maybe<StringQueryOperatorInput>;
+  readonly monospace: Maybe<StringQueryOperatorInput>;
+  readonly sans: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultFontWeightsFilterInput = {
+  readonly body: Maybe<IntQueryOperatorInput>;
+  readonly heading: Maybe<IntQueryOperatorInput>;
+  readonly bold: Maybe<IntQueryOperatorInput>;
+  readonly light: Maybe<IntQueryOperatorInput>;
+  readonly normal: Maybe<IntQueryOperatorInput>;
+  readonly display: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultLineHeightsFilterInput = {
+  readonly body: Maybe<FloatQueryOperatorInput>;
+  readonly heading: Maybe<FloatQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultSizesFilterInput = {
+  readonly sm: Maybe<IntQueryOperatorInput>;
+  readonly md: Maybe<IntQueryOperatorInput>;
+  readonly lg: Maybe<IntQueryOperatorInput>;
+  readonly xl: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultShadowsFilterInput = {
+  readonly default: Maybe<StringQueryOperatorInput>;
+  readonly sm: Maybe<StringQueryOperatorInput>;
+  readonly lg: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultRadiiFilterInput = {
+  readonly default: Maybe<StringQueryOperatorInput>;
+  readonly sm: Maybe<StringQueryOperatorInput>;
+  readonly lg: Maybe<StringQueryOperatorInput>;
+  readonly pill: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultTextFilterInput = {
+  readonly heading: Maybe<SitePluginPluginOptionsPresetDefaultTextHeadingFilterInput>;
+  readonly display: Maybe<SitePluginPluginOptionsPresetDefaultTextDisplayFilterInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultTextHeadingFilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly mt: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultTextDisplayFilterInput = {
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesFilterInput = {
+  readonly root: Maybe<SitePluginPluginOptionsPresetDefaultStylesRootFilterInput>;
+  readonly a: Maybe<SitePluginPluginOptionsPresetDefaultStylesAFilterInput>;
+  readonly p: Maybe<SitePluginPluginOptionsPresetDefaultStylesPFilterInput>;
+  readonly h1: Maybe<SitePluginPluginOptionsPresetDefaultStylesH1FilterInput>;
+  readonly h2: Maybe<SitePluginPluginOptionsPresetDefaultStylesH2FilterInput>;
+  readonly h3: Maybe<SitePluginPluginOptionsPresetDefaultStylesH3FilterInput>;
+  readonly h4: Maybe<SitePluginPluginOptionsPresetDefaultStylesH4FilterInput>;
+  readonly h5: Maybe<SitePluginPluginOptionsPresetDefaultStylesH5FilterInput>;
+  readonly h6: Maybe<SitePluginPluginOptionsPresetDefaultStylesH6FilterInput>;
+  readonly blockquote: Maybe<SitePluginPluginOptionsPresetDefaultStylesBlockquoteFilterInput>;
+  readonly table: Maybe<SitePluginPluginOptionsPresetDefaultStylesTableFilterInput>;
+  readonly th: Maybe<SitePluginPluginOptionsPresetDefaultStylesThFilterInput>;
+  readonly td: Maybe<SitePluginPluginOptionsPresetDefaultStylesTdFilterInput>;
+  readonly inlineCode: Maybe<SitePluginPluginOptionsPresetDefaultStylesInlineCodeFilterInput>;
+  readonly img: Maybe<SitePluginPluginOptionsPresetDefaultStylesImgFilterInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesRootFilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesAFilterInput = {
+  readonly color: Maybe<StringQueryOperatorInput>;
+  readonly textDecoration: Maybe<StringQueryOperatorInput>;
+  readonly _hover: Maybe<SitePluginPluginOptionsPresetDefaultStylesA_hoverFilterInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesA_hoverFilterInput = {
+  readonly textDecoration: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesPFilterInput = {
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesH1FilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly mt: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesH2FilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly mt: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesH3FilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly mt: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesH4FilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly mt: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesH5FilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly mt: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesH6FilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly mt: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesBlockquoteFilterInput = {
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesTableFilterInput = {
+  readonly width: Maybe<StringQueryOperatorInput>;
+  readonly marginBottom: Maybe<IntQueryOperatorInput>;
+  readonly color: Maybe<StringQueryOperatorInput>;
+  readonly borderCollapse: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesThFilterInput = {
+  readonly verticalAlign: Maybe<StringQueryOperatorInput>;
+  readonly borderTopWidth: Maybe<IntQueryOperatorInput>;
+  readonly borderTopStyle: Maybe<StringQueryOperatorInput>;
+  readonly borderTopColor: Maybe<StringQueryOperatorInput>;
+  readonly borderBottomWidth: Maybe<IntQueryOperatorInput>;
+  readonly borderBottomStyle: Maybe<StringQueryOperatorInput>;
+  readonly borderBottomColor: Maybe<StringQueryOperatorInput>;
+  readonly padding: Maybe<StringQueryOperatorInput>;
+  readonly textAlign: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesTdFilterInput = {
+  readonly borderBottomWidth: Maybe<IntQueryOperatorInput>;
+  readonly borderBottomStyle: Maybe<StringQueryOperatorInput>;
+  readonly borderBottomColor: Maybe<StringQueryOperatorInput>;
+  readonly verticalAlign: Maybe<StringQueryOperatorInput>;
+  readonly padding: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesInlineCodeFilterInput = {
+  readonly color: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetDefaultStylesImgFilterInput = {
+  readonly maxWidth: Maybe<StringQueryOperatorInput>;
+  readonly height: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetFontWeightsFilterInput = {
+  readonly body: Maybe<IntQueryOperatorInput>;
+  readonly heading: Maybe<IntQueryOperatorInput>;
+  readonly bold: Maybe<IntQueryOperatorInput>;
+  readonly light: Maybe<IntQueryOperatorInput>;
+  readonly normal: Maybe<IntQueryOperatorInput>;
+  readonly display: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetFontsFilterInput = {
+  readonly body: Maybe<StringQueryOperatorInput>;
+  readonly heading: Maybe<StringQueryOperatorInput>;
+  readonly monospace: Maybe<StringQueryOperatorInput>;
+  readonly sans: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetLineHeightsFilterInput = {
+  readonly body: Maybe<FloatQueryOperatorInput>;
+  readonly heading: Maybe<FloatQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetRadiiFilterInput = {
+  readonly default: Maybe<StringQueryOperatorInput>;
+  readonly sm: Maybe<StringQueryOperatorInput>;
+  readonly lg: Maybe<StringQueryOperatorInput>;
+  readonly pill: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetShadowsFilterInput = {
+  readonly default: Maybe<StringQueryOperatorInput>;
+  readonly sm: Maybe<StringQueryOperatorInput>;
+  readonly lg: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetSizesFilterInput = {
+  readonly sm: Maybe<IntQueryOperatorInput>;
+  readonly md: Maybe<IntQueryOperatorInput>;
+  readonly lg: Maybe<IntQueryOperatorInput>;
+  readonly xl: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetStylesFilterInput = {
+  readonly root: Maybe<SitePluginPluginOptionsPresetStylesRootFilterInput>;
+  readonly a: Maybe<SitePluginPluginOptionsPresetStylesAFilterInput>;
+  readonly p: Maybe<SitePluginPluginOptionsPresetStylesPFilterInput>;
+  readonly h1: Maybe<SitePluginPluginOptionsPresetStylesH1FilterInput>;
+  readonly h2: Maybe<SitePluginPluginOptionsPresetStylesH2FilterInput>;
+  readonly h3: Maybe<SitePluginPluginOptionsPresetStylesH3FilterInput>;
+  readonly h4: Maybe<SitePluginPluginOptionsPresetStylesH4FilterInput>;
+  readonly h5: Maybe<SitePluginPluginOptionsPresetStylesH5FilterInput>;
+  readonly h6: Maybe<SitePluginPluginOptionsPresetStylesH6FilterInput>;
+  readonly blockquote: Maybe<SitePluginPluginOptionsPresetStylesBlockquoteFilterInput>;
+  readonly table: Maybe<SitePluginPluginOptionsPresetStylesTableFilterInput>;
+  readonly th: Maybe<SitePluginPluginOptionsPresetStylesThFilterInput>;
+  readonly td: Maybe<SitePluginPluginOptionsPresetStylesTdFilterInput>;
+  readonly inlineCode: Maybe<SitePluginPluginOptionsPresetStylesInlineCodeFilterInput>;
+  readonly img: Maybe<SitePluginPluginOptionsPresetStylesImgFilterInput>;
+};
+
+type SitePluginPluginOptionsPresetStylesRootFilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetStylesAFilterInput = {
+  readonly color: Maybe<StringQueryOperatorInput>;
+  readonly textDecoration: Maybe<StringQueryOperatorInput>;
+  readonly _hover: Maybe<SitePluginPluginOptionsPresetStylesA_hoverFilterInput>;
+};
+
+type SitePluginPluginOptionsPresetStylesA_hoverFilterInput = {
+  readonly textDecoration: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetStylesPFilterInput = {
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetStylesH1FilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly mt: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetStylesH2FilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly mt: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetStylesH3FilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly mt: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetStylesH4FilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly mt: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetStylesH5FilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly mt: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetStylesH6FilterInput = {
+  readonly fontFamily: Maybe<StringQueryOperatorInput>;
+  readonly fontWeight: Maybe<StringQueryOperatorInput>;
+  readonly lineHeight: Maybe<StringQueryOperatorInput>;
+  readonly mt: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetStylesBlockquoteFilterInput = {
+  readonly fontSize: Maybe<IntQueryOperatorInput>;
+  readonly mb: Maybe<IntQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetStylesTableFilterInput = {
+  readonly width: Maybe<StringQueryOperatorInput>;
+  readonly marginBottom: Maybe<IntQueryOperatorInput>;
+  readonly color: Maybe<StringQueryOperatorInput>;
+  readonly borderCollapse: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetStylesThFilterInput = {
+  readonly verticalAlign: Maybe<StringQueryOperatorInput>;
+  readonly borderTopWidth: Maybe<IntQueryOperatorInput>;
+  readonly borderTopStyle: Maybe<StringQueryOperatorInput>;
+  readonly borderTopColor: Maybe<StringQueryOperatorInput>;
+  readonly borderBottomWidth: Maybe<IntQueryOperatorInput>;
+  readonly borderBottomStyle: Maybe<StringQueryOperatorInput>;
+  readonly borderBottomColor: Maybe<StringQueryOperatorInput>;
+  readonly padding: Maybe<StringQueryOperatorInput>;
+  readonly textAlign: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetStylesTdFilterInput = {
+  readonly borderBottomWidth: Maybe<IntQueryOperatorInput>;
+  readonly borderBottomStyle: Maybe<StringQueryOperatorInput>;
+  readonly borderBottomColor: Maybe<StringQueryOperatorInput>;
+  readonly verticalAlign: Maybe<StringQueryOperatorInput>;
+  readonly padding: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetStylesInlineCodeFilterInput = {
+  readonly color: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPresetStylesImgFilterInput = {
+  readonly maxWidth: Maybe<StringQueryOperatorInput>;
+  readonly height: Maybe<StringQueryOperatorInput>;
 };
 
 type SitePluginPluginOptionsEmitSchemaFilterInput = {
@@ -1764,6 +3180,90 @@ type SitePageFieldsEnum =
   | 'internalComponentName'
   | 'componentChunkName'
   | 'matchPath'
+  | 'isCreatedByStatefulCreatePages'
+  | 'pluginCreator.resolve'
+  | 'pluginCreator.name'
+  | 'pluginCreator.version'
+  | 'pluginCreator.nodeAPIs'
+  | 'pluginCreator.browserAPIs'
+  | 'pluginCreator.ssrAPIs'
+  | 'pluginCreator.pluginFilepath'
+  | 'pluginCreator.pluginOptions.output'
+  | 'pluginCreator.pluginOptions.createLinkInHead'
+  | 'pluginCreator.pluginOptions.entryLimit'
+  | 'pluginCreator.pluginOptions.query'
+  | 'pluginCreator.pluginOptions.preset.breakpoints'
+  | 'pluginCreator.pluginOptions.preset.fontSizes'
+  | 'pluginCreator.pluginOptions.preset.space'
+  | 'pluginCreator.pluginOptions.icon'
+  | 'pluginCreator.pluginOptions.legacy'
+  | 'pluginCreator.pluginOptions.theme_color_in_head'
+  | 'pluginCreator.pluginOptions.cache_busting_mode'
+  | 'pluginCreator.pluginOptions.crossOrigin'
+  | 'pluginCreator.pluginOptions.include_favicon'
+  | 'pluginCreator.pluginOptions.cacheDigest'
+  | 'pluginCreator.pluginOptions.emitSchema.src___generated___gatsby_introspection_json'
+  | 'pluginCreator.pluginOptions.emitSchema.src___generated___gatsby_schema_graphql'
+  | 'pluginCreator.pluginOptions.emitPluginDocuments.src___generated___gatsby_plugin_documents_graphql'
+  | 'pluginCreator.pluginOptions.path'
+  | 'pluginCreator.pluginOptions.pathCheck'
+  | 'pluginCreator.pluginOptions.allExtensions'
+  | 'pluginCreator.pluginOptions.isTSX'
+  | 'pluginCreator.pluginOptions.jsxPragma'
+  | 'pluginCreator.packageJson.name'
+  | 'pluginCreator.packageJson.description'
+  | 'pluginCreator.packageJson.version'
+  | 'pluginCreator.packageJson.main'
+  | 'pluginCreator.packageJson.license'
+  | 'pluginCreator.packageJson.dependencies'
+  | 'pluginCreator.packageJson.dependencies.name'
+  | 'pluginCreator.packageJson.dependencies.version'
+  | 'pluginCreator.packageJson.devDependencies'
+  | 'pluginCreator.packageJson.devDependencies.name'
+  | 'pluginCreator.packageJson.devDependencies.version'
+  | 'pluginCreator.packageJson.peerDependencies'
+  | 'pluginCreator.packageJson.peerDependencies.name'
+  | 'pluginCreator.packageJson.peerDependencies.version'
+  | 'pluginCreator.packageJson.keywords'
+  | 'pluginCreator.id'
+  | 'pluginCreator.parent.id'
+  | 'pluginCreator.parent.parent.id'
+  | 'pluginCreator.parent.parent.children'
+  | 'pluginCreator.parent.children'
+  | 'pluginCreator.parent.children.id'
+  | 'pluginCreator.parent.children.children'
+  | 'pluginCreator.parent.internal.content'
+  | 'pluginCreator.parent.internal.contentDigest'
+  | 'pluginCreator.parent.internal.description'
+  | 'pluginCreator.parent.internal.fieldOwners'
+  | 'pluginCreator.parent.internal.ignoreType'
+  | 'pluginCreator.parent.internal.mediaType'
+  | 'pluginCreator.parent.internal.owner'
+  | 'pluginCreator.parent.internal.type'
+  | 'pluginCreator.children'
+  | 'pluginCreator.children.id'
+  | 'pluginCreator.children.parent.id'
+  | 'pluginCreator.children.parent.children'
+  | 'pluginCreator.children.children'
+  | 'pluginCreator.children.children.id'
+  | 'pluginCreator.children.children.children'
+  | 'pluginCreator.children.internal.content'
+  | 'pluginCreator.children.internal.contentDigest'
+  | 'pluginCreator.children.internal.description'
+  | 'pluginCreator.children.internal.fieldOwners'
+  | 'pluginCreator.children.internal.ignoreType'
+  | 'pluginCreator.children.internal.mediaType'
+  | 'pluginCreator.children.internal.owner'
+  | 'pluginCreator.children.internal.type'
+  | 'pluginCreator.internal.content'
+  | 'pluginCreator.internal.contentDigest'
+  | 'pluginCreator.internal.description'
+  | 'pluginCreator.internal.fieldOwners'
+  | 'pluginCreator.internal.ignoreType'
+  | 'pluginCreator.internal.mediaType'
+  | 'pluginCreator.internal.owner'
+  | 'pluginCreator.internal.type'
+  | 'pluginCreatorId'
   | 'id'
   | 'parent.id'
   | 'parent.parent.id'
@@ -1849,88 +3349,7 @@ type SitePageFieldsEnum =
   | 'internal.ignoreType'
   | 'internal.mediaType'
   | 'internal.owner'
-  | 'internal.type'
-  | 'isCreatedByStatefulCreatePages'
-  | 'pluginCreator.resolve'
-  | 'pluginCreator.name'
-  | 'pluginCreator.version'
-  | 'pluginCreator.nodeAPIs'
-  | 'pluginCreator.browserAPIs'
-  | 'pluginCreator.ssrAPIs'
-  | 'pluginCreator.pluginFilepath'
-  | 'pluginCreator.pluginOptions.output'
-  | 'pluginCreator.pluginOptions.createLinkInHead'
-  | 'pluginCreator.pluginOptions.entryLimit'
-  | 'pluginCreator.pluginOptions.query'
-  | 'pluginCreator.pluginOptions.icon'
-  | 'pluginCreator.pluginOptions.legacy'
-  | 'pluginCreator.pluginOptions.theme_color_in_head'
-  | 'pluginCreator.pluginOptions.cache_busting_mode'
-  | 'pluginCreator.pluginOptions.crossOrigin'
-  | 'pluginCreator.pluginOptions.include_favicon'
-  | 'pluginCreator.pluginOptions.cacheDigest'
-  | 'pluginCreator.pluginOptions.emitSchema.src___generated___gatsby_introspection_json'
-  | 'pluginCreator.pluginOptions.emitSchema.src___generated___gatsby_schema_graphql'
-  | 'pluginCreator.pluginOptions.emitPluginDocuments.src___generated___gatsby_plugin_documents_graphql'
-  | 'pluginCreator.pluginOptions.path'
-  | 'pluginCreator.pluginOptions.pathCheck'
-  | 'pluginCreator.pluginOptions.allExtensions'
-  | 'pluginCreator.pluginOptions.isTSX'
-  | 'pluginCreator.pluginOptions.jsxPragma'
-  | 'pluginCreator.packageJson.name'
-  | 'pluginCreator.packageJson.description'
-  | 'pluginCreator.packageJson.version'
-  | 'pluginCreator.packageJson.main'
-  | 'pluginCreator.packageJson.license'
-  | 'pluginCreator.packageJson.dependencies'
-  | 'pluginCreator.packageJson.dependencies.name'
-  | 'pluginCreator.packageJson.dependencies.version'
-  | 'pluginCreator.packageJson.devDependencies'
-  | 'pluginCreator.packageJson.devDependencies.name'
-  | 'pluginCreator.packageJson.devDependencies.version'
-  | 'pluginCreator.packageJson.peerDependencies'
-  | 'pluginCreator.packageJson.peerDependencies.name'
-  | 'pluginCreator.packageJson.peerDependencies.version'
-  | 'pluginCreator.packageJson.keywords'
-  | 'pluginCreator.id'
-  | 'pluginCreator.parent.id'
-  | 'pluginCreator.parent.parent.id'
-  | 'pluginCreator.parent.parent.children'
-  | 'pluginCreator.parent.children'
-  | 'pluginCreator.parent.children.id'
-  | 'pluginCreator.parent.children.children'
-  | 'pluginCreator.parent.internal.content'
-  | 'pluginCreator.parent.internal.contentDigest'
-  | 'pluginCreator.parent.internal.description'
-  | 'pluginCreator.parent.internal.fieldOwners'
-  | 'pluginCreator.parent.internal.ignoreType'
-  | 'pluginCreator.parent.internal.mediaType'
-  | 'pluginCreator.parent.internal.owner'
-  | 'pluginCreator.parent.internal.type'
-  | 'pluginCreator.children'
-  | 'pluginCreator.children.id'
-  | 'pluginCreator.children.parent.id'
-  | 'pluginCreator.children.parent.children'
-  | 'pluginCreator.children.children'
-  | 'pluginCreator.children.children.id'
-  | 'pluginCreator.children.children.children'
-  | 'pluginCreator.children.internal.content'
-  | 'pluginCreator.children.internal.contentDigest'
-  | 'pluginCreator.children.internal.description'
-  | 'pluginCreator.children.internal.fieldOwners'
-  | 'pluginCreator.children.internal.ignoreType'
-  | 'pluginCreator.children.internal.mediaType'
-  | 'pluginCreator.children.internal.owner'
-  | 'pluginCreator.children.internal.type'
-  | 'pluginCreator.internal.content'
-  | 'pluginCreator.internal.contentDigest'
-  | 'pluginCreator.internal.description'
-  | 'pluginCreator.internal.fieldOwners'
-  | 'pluginCreator.internal.ignoreType'
-  | 'pluginCreator.internal.mediaType'
-  | 'pluginCreator.internal.owner'
-  | 'pluginCreator.internal.type'
-  | 'pluginCreatorId';
+  | 'internal.type';
 
 type SitePageGroupConnection = {
   readonly totalCount: Scalars['Int'];
@@ -1979,13 +3398,13 @@ type SitePageFilterInput = {
   readonly internalComponentName: Maybe<StringQueryOperatorInput>;
   readonly componentChunkName: Maybe<StringQueryOperatorInput>;
   readonly matchPath: Maybe<StringQueryOperatorInput>;
+  readonly isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
+  readonly pluginCreator: Maybe<SitePluginFilterInput>;
+  readonly pluginCreatorId: Maybe<StringQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
   readonly parent: Maybe<NodeFilterInput>;
   readonly children: Maybe<NodeFilterListInput>;
   readonly internal: Maybe<InternalFilterInput>;
-  readonly isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
-  readonly pluginCreator: Maybe<SitePluginFilterInput>;
-  readonly pluginCreatorId: Maybe<StringQueryOperatorInput>;
 };
 
 type SitePageSortInput = {
@@ -2050,6 +3469,77 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.createLinkInHead'
   | 'pluginOptions.entryLimit'
   | 'pluginOptions.query'
+  | 'pluginOptions.preset.baseColors.white'
+  | 'pluginOptions.preset.baseColors.black'
+  | 'pluginOptions.preset.baseColors.gray'
+  | 'pluginOptions.preset.baseColors.blue'
+  | 'pluginOptions.preset.baseColors.indigo'
+  | 'pluginOptions.preset.baseColors.purple'
+  | 'pluginOptions.preset.baseColors.pink'
+  | 'pluginOptions.preset.baseColors.red'
+  | 'pluginOptions.preset.baseColors.orange'
+  | 'pluginOptions.preset.baseColors.yellow'
+  | 'pluginOptions.preset.baseColors.green'
+  | 'pluginOptions.preset.baseColors.teal'
+  | 'pluginOptions.preset.baseColors.cyan'
+  | 'pluginOptions.preset.bootstrap.breakpoints'
+  | 'pluginOptions.preset.bootstrap.space'
+  | 'pluginOptions.preset.bootstrap.fontSizes'
+  | 'pluginOptions.preset.breakpoints'
+  | 'pluginOptions.preset.colors.white'
+  | 'pluginOptions.preset.colors.black'
+  | 'pluginOptions.preset.colors.gray'
+  | 'pluginOptions.preset.colors.blue'
+  | 'pluginOptions.preset.colors.indigo'
+  | 'pluginOptions.preset.colors.purple'
+  | 'pluginOptions.preset.colors.pink'
+  | 'pluginOptions.preset.colors.red'
+  | 'pluginOptions.preset.colors.orange'
+  | 'pluginOptions.preset.colors.yellow'
+  | 'pluginOptions.preset.colors.green'
+  | 'pluginOptions.preset.colors.teal'
+  | 'pluginOptions.preset.colors.cyan'
+  | 'pluginOptions.preset.colors.grayDark'
+  | 'pluginOptions.preset.colors.text'
+  | 'pluginOptions.preset.colors.background'
+  | 'pluginOptions.preset.colors.primary'
+  | 'pluginOptions.preset.colors.secondary'
+  | 'pluginOptions.preset.colors.muted'
+  | 'pluginOptions.preset.colors.success'
+  | 'pluginOptions.preset.colors.info'
+  | 'pluginOptions.preset.colors.warning'
+  | 'pluginOptions.preset.colors.danger'
+  | 'pluginOptions.preset.colors.light'
+  | 'pluginOptions.preset.colors.dark'
+  | 'pluginOptions.preset.colors.textMuted'
+  | 'pluginOptions.preset.default.breakpoints'
+  | 'pluginOptions.preset.default.space'
+  | 'pluginOptions.preset.default.fontSizes'
+  | 'pluginOptions.preset.fontSizes'
+  | 'pluginOptions.preset.fontWeights.body'
+  | 'pluginOptions.preset.fontWeights.heading'
+  | 'pluginOptions.preset.fontWeights.bold'
+  | 'pluginOptions.preset.fontWeights.light'
+  | 'pluginOptions.preset.fontWeights.normal'
+  | 'pluginOptions.preset.fontWeights.display'
+  | 'pluginOptions.preset.fonts.body'
+  | 'pluginOptions.preset.fonts.heading'
+  | 'pluginOptions.preset.fonts.monospace'
+  | 'pluginOptions.preset.fonts.sans'
+  | 'pluginOptions.preset.lineHeights.body'
+  | 'pluginOptions.preset.lineHeights.heading'
+  | 'pluginOptions.preset.radii.default'
+  | 'pluginOptions.preset.radii.sm'
+  | 'pluginOptions.preset.radii.lg'
+  | 'pluginOptions.preset.radii.pill'
+  | 'pluginOptions.preset.shadows.default'
+  | 'pluginOptions.preset.shadows.sm'
+  | 'pluginOptions.preset.shadows.lg'
+  | 'pluginOptions.preset.sizes.sm'
+  | 'pluginOptions.preset.sizes.md'
+  | 'pluginOptions.preset.sizes.lg'
+  | 'pluginOptions.preset.sizes.xl'
+  | 'pluginOptions.preset.space'
   | 'pluginOptions.icon'
   | 'pluginOptions.legacy'
   | 'pluginOptions.theme_color_in_head'
