@@ -36,9 +36,9 @@
 ## **Features**
 
 - [x] Typescript - code gen,
-
-- [ ] ESLint,
-- [ ] Prettier,
+- [x] ESLint,
+- [x] Prettier,
+- [ ] Git hooks,
 - [ ] Theme UI (theme),
 - [ ] Emotion and Emotion styled component,
 - [ ] Core components (Container, GatsbyLink, Layout, Seo, Button, Header bare minimum...),
@@ -48,6 +48,5 @@
 - [ ] Form template (A few input fields, some required, some not. Validation, Netlify submit),
 - [ ] Hooks (useSiteMetadata...),
 - [ ] package.json scripts,
-- [ ] Git hooks
 
 TODO: Improve README!

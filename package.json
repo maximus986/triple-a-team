@@ -6,13 +6,21 @@
   "keywords": [
     "gatsby"
   ],
+  "lint-staged": {
+    "./**/*.{js,jsx,ts,tsx}": [
+      "prettier",
+      "eslint",
+      "git add"
+    ]
+  },
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby clean && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "compile": "tsc --noEmit",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "prettier:fix": "prettier --write  ./**/*.{js,ts,tsx}"
   },
   "dependencies": {
     "gatsby": "^3.14.2",
@@ -32,11 +40,15 @@
     "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^8.0.1",
     "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "gatsby-plugin-typegen": "^2.2.4",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.2.3",
+    "prettier": "2.4.1",
     "typescript": "^4.4.4"
   }
 }
