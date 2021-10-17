@@ -40,7 +40,7 @@
 - [x] Prettier,
 - [x] Git hooks,
 - [x] package.json scripts,
-- [ ] Theme UI (theme),
+- [x] Theme UI (theme),
 - [ ] Emotion and Emotion styled component,
 - [ ] Core components (Container, GatsbyLink, Layout, Seo, Button, Header bare minimum...),
 - [ ] Core gatsby plugins (Helmet, Sitemap, Robots, Layout (Proanalytica))
