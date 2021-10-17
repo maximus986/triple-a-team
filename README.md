@@ -35,18 +35,19 @@
 
 ## **Features**
 
-1. Typescript - code gen,
-2. ESLint,
-3. Prettier,
-   4.Theme UI (theme),
-4. Emotion and Emotion styled component,
-5. Core components (Container, GatsbyLink, Layout, Seo, Button, Header bare minimum...),
-6. Editor config,
-   8.Core gatsby plugins (Helmet, Sitemap, Robots, Layout (Proanalytica))
-7. Absolute imports (Proanalytica),
-8. Form template (A few input fields, some required, some not. Validation, Netlify submit),
-9. Hooks (useSiteMetadata...),
-10. package.json scripts,
-11. Git hooks
+- [x] Typescript - code gen,
+
+- [ ] ESLint,
+- [ ] Prettier,
+- [ ] Theme UI (theme),
+- [ ] Emotion and Emotion styled component,
+- [ ] Core components (Container, GatsbyLink, Layout, Seo, Button, Header bare minimum...),
+- [ ] Editor config,
+- [ ] Core gatsby plugins (Helmet, Sitemap, Robots, Layout (Proanalytica))
+- [ ] Absolute imports (Proanalytica),
+- [ ] Form template (A few input fields, some required, some not. Validation, Netlify submit),
+- [ ] Hooks (useSiteMetadata...),
+- [ ] package.json scripts,
+- [ ] Git hooks
 
 TODO: Improve README!
