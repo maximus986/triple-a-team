@@ -5,4 +5,6 @@ export default {
   styles: {
     ...bootstrap.styles,
   },
+  breakpoints: [...bootstrap.breakpoints, '1400px'],
+  sizes: { ...bootstrap.sizes, xxl: 1320 },
 };
