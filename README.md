@@ -42,9 +42,9 @@
 - [x] package.json scripts,
 - [x] Theme UI (theme),
 - [x] Emotion and Emotion styled component,
+- [x] Absolute imports,
 - [ ] Core components (Container, GatsbyLink, Layout, Seo, Button, Header bare minimum...),
 - [ ] Core gatsby plugins (Helmet, Sitemap, Robots, Layout (Proanalytica))
-- [ ] Absolute imports (Proanalytica),
 - [ ] Form template (A few input fields, some required, some not. Validation, Netlify submit),
 - [ ] Hooks (useSiteMetadata...),
 - [ ] Fonts,
