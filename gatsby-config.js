@@ -1,7 +1,10 @@
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://www.yourdomain.tld',
-    title: 'gatsby-starter-template',
+    title: 'Title of the site created using this template',
+    description: 'Add description for site created using this template',
+    keywords: 'Add keywords for site created using this template',
+    author: 'Aleksandar Maksimovic<aleksandar.maksimovic2608@gmail.com',
   },
   plugins: [
     'gatsby-plugin-theme-ui',

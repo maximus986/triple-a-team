@@ -43,10 +43,10 @@
 - [x] Theme UI (theme),
 - [x] Emotion and Emotion styled component,
 - [x] Absolute imports,
+- [x] Hooks (useSiteMetadata...),
 - [ ] Core components (Container, GatsbyLink, Layout, Seo, Button, Header bare minimum...),
 - [ ] Core gatsby plugins (Helmet, Sitemap, Robots, Layout (Proanalytica))
 - [ ] Form template (A few input fields, some required, some not. Validation, Netlify submit),
-- [ ] Hooks (useSiteMetadata...),
 - [ ] Fonts,
 - [ ] Netlify deploy via cli ?
 
