@@ -383,6 +383,10 @@ type SitePluginPluginOptions {
   createLinkInHead: Boolean
   entryLimit: Int
   query: String
+  sourceMap: Boolean
+  autoLabel: String
+  labelFormat: String
+  cssPropOptimization: Boolean
   preset: SitePluginPluginOptionsPreset
   basePath: String
   icon: String
@@ -1996,6 +2000,10 @@ input SitePluginPluginOptionsFilterInput {
   createLinkInHead: BooleanQueryOperatorInput
   entryLimit: IntQueryOperatorInput
   query: StringQueryOperatorInput
+  sourceMap: BooleanQueryOperatorInput
+  autoLabel: StringQueryOperatorInput
+  labelFormat: StringQueryOperatorInput
+  cssPropOptimization: BooleanQueryOperatorInput
   preset: SitePluginPluginOptionsPresetFilterInput
   basePath: StringQueryOperatorInput
   icon: StringQueryOperatorInput
@@ -2895,6 +2903,10 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___createLinkInHead
   pluginCreator___pluginOptions___entryLimit
   pluginCreator___pluginOptions___query
+  pluginCreator___pluginOptions___sourceMap
+  pluginCreator___pluginOptions___autoLabel
+  pluginCreator___pluginOptions___labelFormat
+  pluginCreator___pluginOptions___cssPropOptimization
   pluginCreator___pluginOptions___preset___breakpoints
   pluginCreator___pluginOptions___preset___fontSizes
   pluginCreator___pluginOptions___preset___space
@@ -3034,6 +3046,10 @@ enum SitePluginFieldsEnum {
   pluginOptions___createLinkInHead
   pluginOptions___entryLimit
   pluginOptions___query
+  pluginOptions___sourceMap
+  pluginOptions___autoLabel
+  pluginOptions___labelFormat
+  pluginOptions___cssPropOptimization
   pluginOptions___preset___baseColors___white
   pluginOptions___preset___baseColors___black
   pluginOptions___preset___baseColors___gray

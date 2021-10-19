@@ -7,6 +7,7 @@ module.exports = {
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
+    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-theme-ui`,
       options: {
