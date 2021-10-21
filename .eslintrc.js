@@ -46,5 +46,6 @@ module.exports = {
     'no-console': 'error',
     'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
     'no-use-before-define': 'off',
+    'react/require-default-props': 'off',
   },
 };

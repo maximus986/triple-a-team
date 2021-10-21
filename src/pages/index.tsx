@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui';
 import { useResponsiveValue, useBreakpointIndex } from '@theme-ui/match-media';
 
 import React from 'react';
-import { Container } from 'components';
+import { Container, Link } from 'components';
 
 const IndexPage = () => {
   // Return literal values:
@@ -22,6 +22,7 @@ const IndexPage = () => {
       <p>
         The current color is: {color}, and the current index is: {index}
       </p>
+      <Link to="https://www.google.com/">Link</Link>
     </Container>
   );
 };
