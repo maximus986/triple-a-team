@@ -43,5 +43,12 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        // Layout component must be default exported
+        component: `${__dirname}/src/components/Layout.tsx`,
+      },
+    },
   ],
 };
