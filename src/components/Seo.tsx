@@ -4,12 +4,12 @@ import { useSiteMetadata } from 'hooks';
 
 type NameMetaObj = {
   name: string;
-  content: string;
+  content: string | undefined;
 };
 
 type PropertyMetaObj = {
   property: string;
-  content: string;
+  content: string | undefined;
 };
 
 type Meta = ConcatArray<NameMetaObj | PropertyMetaObj>;
@@ -39,6 +39,7 @@ export const Seo: FunctionComponent<SeoProps> = ({
       }}
       title={title}
       titleTemplate={`%s | ${siteTitle}`}
+      //@ts-ignore
       meta={[
         {
           name: `description`,

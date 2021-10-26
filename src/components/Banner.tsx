@@ -1,10 +1,10 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
+import { ContentfulBannerConnection } from '../../graphql-types';
 
 export const Banner = () => {
   const { allContentfulBanner } = useStaticQuery<{
-    // eslint-disable-next-line no-undef
-    allContentfulBanner: any;
+    allContentfulBanner: ContentfulBannerConnection;
   }>(graphql`
     {
       allContentfulBanner {

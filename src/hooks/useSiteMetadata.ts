@@ -1,8 +1,7 @@
 import { useStaticQuery, graphql } from 'gatsby';
+import { SiteSiteMetadata } from '../../graphql-types';
 
-// TODO: Check what is wrong with GatsbyTypes namespace (possible redo of code gen implementation?)
-// eslint-disable-next-line no-undef
-type SiteMetadata = GatsbyTypes.SiteSiteMetadata;
+type SiteMetadata = SiteSiteMetadata;
 
 interface Site {
   site: {

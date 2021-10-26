@@ -1,9 +1,10 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
+import { ContentfulAboutUs } from '../../graphql-types';
 
 export const AboutUs = () => {
   const { contentfulAboutUs } = useStaticQuery<{
-    contentfulAboutUs: any;
+    contentfulAboutUs: ContentfulAboutUs;
   }>(graphql`
     {
       contentfulAboutUs {
