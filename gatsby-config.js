@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://www.yourdomain.tld',
@@ -10,9 +14,12 @@ module.exports = {
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
-    `gatsby-plugin-emotion`,
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: `gatsby-plugin-theme-ui`,
+      resolve: 'gatsby-plugin-theme-ui',
       options: {
         preset: '@theme-ui/preset-bootstrap',
       },
@@ -48,6 +55,13 @@ module.exports = {
       options: {
         // Layout component must be default exported
         component: `${__dirname}/src/components/Layout.tsx`,
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
   ],
