@@ -39,18 +39,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-typegen`,
-      options: {
-        emitSchema: {
-          'src/__generated__/gatsby-introspection.json': true,
-          'src/__generated__/gatsby-schema.graphql': true,
-        },
-        emitPluginDocuments: {
-          'src/__generated__/gatsby-plugin-documents.graphql': true,
-        },
-      },
-    },
-    {
       resolve: `gatsby-plugin-layout`,
       options: {
         // Layout component must be default exported

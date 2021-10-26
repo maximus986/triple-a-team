@@ -4,7 +4,7 @@ import React from 'react';
 export const Banner = () => {
   const { allContentfulBanner } = useStaticQuery<{
     // eslint-disable-next-line no-undef
-    allContentfulBanner: GatsbyTypes.Query['contentfulBanner'][];
+    allContentfulBanner: any;
   }>(graphql`
     {
       allContentfulBanner {

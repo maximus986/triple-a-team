@@ -3,8 +3,7 @@ import React from 'react';
 
 export const AboutUs = () => {
   const { contentfulAboutUs } = useStaticQuery<{
-    // eslint-disable-next-line no-undef
-    contentfulAboutUs: GatsbyTypes.Query['contentfulAboutUs'];
+    contentfulAboutUs: any;
   }>(graphql`
     {
       contentfulAboutUs {

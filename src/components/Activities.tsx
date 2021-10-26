@@ -4,7 +4,7 @@ import React from 'react';
 export const Activities = () => {
   const { contentfulActivitySection } = useStaticQuery<{
     // eslint-disable-next-line no-undef
-    contentfulActivitySection: GatsbyTypes.Query['contentfulActivitySection'];
+    contentfulActivitySection: any;
   }>(graphql`
     {
       contentfulActivitySection {
