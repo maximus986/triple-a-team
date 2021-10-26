@@ -9578,12 +9578,26 @@ type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArr
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_1_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'author' | 'description' | 'keywords' | 'siteUrl' | 'title'>> }> };
+type Unnamed_1_Query = { readonly allContentfulBanner: { readonly nodes: ReadonlyArray<(
+      Pick<ContentfulBanner, 'title'>
+      & { readonly image: Maybe<ReadonlyArray<Maybe<{ readonly fluid: Maybe<Pick<ContentfulFluid, 'src'>> }>>> }
+    )> } };
 
 type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_2_Query = { readonly themeUiConfig: Maybe<Pick<ThemeUiConfig, 'preset' | 'prismPreset'>> };
+type Unnamed_2_Query = { readonly contentfulActivitySection: Maybe<(
+    Pick<ContentfulActivitySection, 'activitySectionTitle'>
+    & { readonly activity: Maybe<ReadonlyArray<Maybe<(
+      Pick<ContentfulActivity, 'activityCategory'>
+      & { readonly activityDescription: Maybe<Pick<contentfulActivityActivityDescriptionTextNode, 'activityDescription'>>, readonly activityImage: Maybe<{ readonly fluid: Maybe<Pick<ContentfulFluid, 'src'>> }> }
+    )>>> }
+  )> };
+
+type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type Unnamed_3_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'author' | 'description' | 'keywords' | 'siteUrl' | 'title'>> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -9611,6 +9625,11 @@ type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
+type Unnamed_4_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type Unnamed_4_Query = { readonly themeUiConfig: Maybe<Pick<ThemeUiConfig, 'preset' | 'prismPreset'>> };
+
 type GatsbyContentfulFixedFragment = Pick<ContentfulFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
 type GatsbyContentfulFixed_tracedSVGFragment = Pick<ContentfulFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>;
@@ -9630,5 +9649,13 @@ type GatsbyContentfulFluid_noBase64Fragment = Pick<ContentfulFluid, 'aspectRatio
 type GatsbyContentfulFluid_withWebpFragment = Pick<ContentfulFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
 type GatsbyContentfulFluid_withWebp_noBase64Fragment = Pick<ContentfulFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type Unnamed_5_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type Unnamed_5_Query = { readonly contentfulAboutUs: Maybe<(
+    Pick<ContentfulAboutUs, 'sectionTitle'>
+    & { readonly aboutUsDescription: Maybe<Pick<contentfulAboutUsAboutUsDescriptionTextNode, 'aboutUsDescription'>> }
+  )> };
 
 }

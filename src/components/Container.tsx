@@ -11,7 +11,6 @@ export const Container: FunctionComponent = ({ children }) => {
     <ThemeUiContainer
       sx={{
         maxWidth: ['100%', ...Object.keys(sizes ?? {})],
-        background: 'grey',
       }}
     >
       {children}
