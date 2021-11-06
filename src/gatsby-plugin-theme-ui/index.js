@@ -117,7 +117,7 @@ export default {
       fontWeight: 'normal',
       fontSize: ['14px', '16px'],
       color: 'text',
-      bg: 'primaryBackground',
+      bg: '#1F2028',
       lineHeight: 'body',
       '&::-webkit-scrollbar': {
         width: '4px',
@@ -139,7 +139,36 @@ export default {
       a: {
         variant: 'text.link',
       },
+      ul: { listStyleType: 'none', padding: 0, margin: 0 },
       figure: { m: 0 },
+      button: {
+        border: 'none',
+        margin: 0,
+        padding: 0,
+        width: 'auto',
+        overflow: 'visible',
+
+        background: 'transparent',
+
+        /* inherit font & color from ancestor */
+        color: 'inherit',
+        font: 'inherit',
+        textAlign: 'inherit',
+
+        /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+        lineHeight: 'normal',
+
+        /* Corrects font smoothing for webkit */
+        '-webkit-font-smoothing': 'inherit',
+        '-moz-osx-font-smoothing': 'inherit',
+
+        /* Corrects inability to style clickable `input` types in iOS */
+        '-webkit-appearance': 'none',
+        '&::-moz-focus-inner': {
+          border: 0,
+          padding: 0,
+        },
+      },
     },
   },
   radii: {
@@ -151,6 +180,5 @@ export default {
     button: '0.5s ease',
     imageLink: '0.4s ease',
     link: '0.3s ease',
-    imageLinkLong: '1s ease',
   },
 };

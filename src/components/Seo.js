@@ -20,7 +20,6 @@ export const Seo = ({
       }}
       title={title}
       titleTemplate={`%s | ${siteTitle}`}
-      //@ts-ignore
       meta={[
         {
           name: `description`,
