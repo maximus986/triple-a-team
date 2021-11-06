@@ -18,20 +18,7 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-plugin-theme-ui',
-      options: {
-        preset: '@theme-ui/preset-bootstrap',
-      },
-    },
-
-    {
-      resolve: 'gatsby-theme-style-guide',
-      options: {
-        // sets path for generated page (The page is rendering Theme UI styles in a style guide format)
-        basePath: '/style-guide',
-      },
-    },
+    'gatsby-plugin-theme-ui',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -50,6 +37,13 @@ module.exports = {
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`ubuntu:300,400,400i,700`],
+        display: 'swap',
       },
     },
   ],
