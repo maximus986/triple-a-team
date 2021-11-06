@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { jsx } from 'theme-ui';
 
-const Layout: FunctionComponent = ({ children }) => (
+const Layout = ({ children }) => (
   <div sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
     <div
       sx={{

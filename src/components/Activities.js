@@ -1,12 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import { ContentfulActivitySection } from '../../graphql-types';
 
 export const Activities = () => {
-  const { contentfulActivitySection } = useStaticQuery<{
-    // eslint-disable-next-line no-undef
-    contentfulActivitySection: ContentfulActivitySection;
-  }>(graphql`
+  const { contentfulActivitySection } = useStaticQuery(graphql`
     {
       contentfulActivitySection {
         activitySectionTitle

@@ -1,15 +1,7 @@
 import { Link as GatsbyLink } from 'gatsby';
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 
-interface LinkProps {
-  to: string;
-}
-
-export const Link: FunctionComponent<LinkProps> = ({
-  children,
-  to,
-  ...rest
-}) => {
+export const Link = ({ children, to, ...rest }) => {
   const internal = /^\/(?!\/)/.test(to);
   if (internal) {
     return <GatsbyLink to={to}>{children}</GatsbyLink>;

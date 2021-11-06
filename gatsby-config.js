@@ -5,7 +5,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://www.yourdomain.tld',
-    title: 'Title of the site created using this template',
+    title: '3ATeam',
     description: 'Add description for site created using this template',
     keywords: 'Add keywords for site created using this template',
     author: 'Aleksandar Maksimovic<aleksandar.maksimovic2608@gmail.com',
@@ -42,7 +42,7 @@ module.exports = {
       resolve: `gatsby-plugin-layout`,
       options: {
         // Layout component must be default exported
-        component: `${__dirname}/src/components/Layout.tsx`,
+        component: `${__dirname}/src/components/Layout.js`,
       },
     },
     {
@@ -52,6 +52,5 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
-    'gatsby-plugin-graphql-codegen',
   ],
 };

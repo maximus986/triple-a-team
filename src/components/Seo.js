@@ -1,27 +1,8 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 import { useSiteMetadata } from 'hooks';
 
-type NameMetaObj = {
-  name: string;
-  content: string | undefined;
-};
-
-type PropertyMetaObj = {
-  property: string;
-  content: string | undefined;
-};
-
-type Meta = ConcatArray<NameMetaObj | PropertyMetaObj>;
-
-interface SeoProps {
-  title: string;
-  pageDescription?: string;
-  lang?: string;
-  meta?: Meta;
-}
-
-export const Seo: FunctionComponent<SeoProps> = ({
+export const Seo = ({
   pageDescription = '',
   lang = 'sr',
   meta = [],

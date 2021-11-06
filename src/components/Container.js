@@ -1,11 +1,13 @@
 /** @jsx jsx */
-import { FunctionComponent } from 'react';
 import { Container as ThemeUiContainer, jsx, useThemeUI } from 'theme-ui';
 
-export const Container: FunctionComponent = ({ children }) => {
+export const Container = ({ children }) => {
   const {
     theme: { sizes },
+    theme,
   } = useThemeUI();
+
+  console.log(theme);
 
   return (
     <ThemeUiContainer

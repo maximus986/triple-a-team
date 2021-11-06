@@ -1,11 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import { ContentfulBannerConnection } from '../../graphql-types';
 
 export const Banner = () => {
-  const { allContentfulBanner } = useStaticQuery<{
-    allContentfulBanner: ContentfulBannerConnection;
-  }>(graphql`
+  const { allContentfulBanner } = useStaticQuery(graphql`
     {
       allContentfulBanner {
         nodes {

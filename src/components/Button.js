@@ -1,18 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Link } from './Link';
-import { FunctionComponent } from 'react';
 
-interface ButtonProps {
-  variant?: string;
-  to: string;
-}
-
-export const Button: FunctionComponent<ButtonProps> = ({
-  variant = 'primary',
-  to,
-  children,
-}) => (
+export const Button = ({ variant = 'primary', to, children }) => (
   <div
     sx={{
       textTransform: 'capitalize',
