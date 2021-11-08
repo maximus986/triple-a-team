@@ -10,6 +10,7 @@ export const MobileNav = ({ showNav, onNavigate }) => (
       height: showNav ? '200px' : 0,
       overflow: 'hidden',
       transition: 'height 0.3s ease',
+      display: [null, null, 'none'],
     }}
   >
     <Box as="ul" sx={{ py: 6 }}>

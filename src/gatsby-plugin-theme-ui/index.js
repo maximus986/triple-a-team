@@ -2,7 +2,7 @@ export default {
   initialColorModeName: 'light',
   useBodyStyles: true,
   colors: {
-    text: '#6E7A6C',
+    text: '#fff',
     primary: '#023508',
     secondary: '#D1EBE3',
     primaryBackground: '#fff',

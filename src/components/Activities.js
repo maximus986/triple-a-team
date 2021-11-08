@@ -23,7 +23,7 @@ export const Activities = () => {
   return (
     <div>
       <h2>{contentfulActivitySection?.activitySectionTitle}</h2>
-      <pre>{JSON.stringify(contentfulActivitySection, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(contentfulActivitySection, null, 2)}</pre> */}
     </div>
   );
 };

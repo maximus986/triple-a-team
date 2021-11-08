@@ -19,7 +19,7 @@ export const Banner = () => {
   return (
     <div>
       <h2>Banner</h2>
-      <pre>{JSON.stringify(allContentfulBanner, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(allContentfulBanner, null, 2)}</pre> */}
     </div>
   );
 };

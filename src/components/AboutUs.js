@@ -16,7 +16,7 @@ export const AboutUs = () => {
   return (
     <div>
       <h2>{contentfulAboutUs?.sectionTitle}</h2>
-      <pre>{JSON.stringify(contentfulAboutUs, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(contentfulAboutUs, null, 2)}</pre> */}
     </div>
   );
 };

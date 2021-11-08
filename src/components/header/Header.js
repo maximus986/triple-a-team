@@ -5,6 +5,8 @@ import { MobileNav } from './MobileNav';
 import logo from 'images/logo.png';
 import { useCallback, useState } from 'react';
 import { Fade as Hamburger } from 'hamburger-react';
+import { Nav } from './Nav';
+import { ContactInfo } from './ContactInfo';
 
 export const Header = () => {
   const [showNav, setShowNav] = useState(false);
@@ -19,7 +21,8 @@ export const Header = () => {
       sx={{
         bg: 'primaryBackground',
         pl: 3,
-        pt: 3,
+        pr: [0, 0, 3],
+        pt: [3],
         pb: 2,
         position: 'fixed',
         top: 0,
@@ -33,20 +36,28 @@ export const Header = () => {
           alignItems: 'center',
         }}
       >
+        <ContactInfo />
         <a
           href="#home"
-          sx={{ height: '50px', display: 'block' }}
+          sx={{
+            height: ['50px', null, '100px'],
+            display: 'block',
+          }}
           onClick={closeNav}
         >
           <img src={logo} alt="" sx={{ height: '100%' }} />
         </a>
-        <Hamburger
-          size={20}
-          toggled={showNav}
-          toggle={setShowNav}
-          label="Show menu"
-          direction="right"
-        />
+        <Box sx={{ display: [null, null, 'none'] }}>
+          <Hamburger
+            size={20}
+            toggled={showNav}
+            toggle={setShowNav}
+            label="Show menu"
+            direction="right"
+            color="black"
+          />
+        </Box>
+        <Nav />
       </Flex>
       <MobileNav showNav={showNav} onNavigate={closeNav} />
     </Box>
