@@ -10,6 +10,7 @@ export const NavLink = ({ to, onNavigate, Icon, children, isLinkActive }) => {
         bg: isLinkActive ? 'primary' : 'transparent',
         transition: '0.3s ease',
         '&:hover': { bg: 'primary' },
+        '&:hover > a': { color: 'white' },
         borderRadius: [null, null, 'navLink'],
         px: [4, null, 3, 4],
         py: [3, null, 4],
@@ -24,8 +25,9 @@ export const NavLink = ({ to, onNavigate, Icon, children, isLinkActive }) => {
         onClick={onNavigate}
         sx={{
           fontSize: [4, null, 2],
-
+          color: isLinkActive ? 'white' : 'textPassive',
           alignItems: 'center',
+          transition: '0.3s ease',
         }}
       >
         <IconContainer style={{ display: [null, null, 'none'] }}>
