@@ -1,26 +1,20 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
 import { Box } from '@theme-ui/components';
-import { navLinks } from 'static/nav-links';
+import { jsx } from 'theme-ui';
+import { MobileContactInfo } from './MobileContactInfo';
+import { MobileNavItems } from './MobileNavItems';
 
 export const MobileNav = ({ showNav, onNavigate }) => (
   <Box
     as="nav"
     sx={{
-      height: showNav ? '200px' : 0,
+      height: showNav ? '300px' : 0,
       overflow: 'hidden',
       transition: 'height 0.3s ease',
       display: [null, null, 'none'],
     }}
   >
-    <Box as="ul" sx={{ py: 6 }}>
-      {navLinks.map((navItem) => (
-        <li key={navItem.text}>
-          <a href={navItem.path} onClick={onNavigate}>
-            {navItem.text}
-          </a>
-        </li>
-      ))}
-    </Box>
+    <MobileNavItems onNavigate={onNavigate} />
+    <MobileContactInfo />
   </Box>
 );

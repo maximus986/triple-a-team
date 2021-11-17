@@ -19,8 +19,7 @@ export const Header = () => {
     <Box
       as="header"
       sx={{
-        bg: 'primaryBackground',
-        pl: 3,
+        bg: 'secondaryBackground',
         pr: [0, 0, 3],
         pt: [3],
         pb: 2,
@@ -42,6 +41,7 @@ export const Header = () => {
           sx={{
             height: ['50px', null, '100px'],
             display: 'block',
+            pl: 3,
           }}
           onClick={closeNav}
         >

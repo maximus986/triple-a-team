@@ -1,17 +1,20 @@
+import { AiOutlineApartment, AiOutlineContacts } from 'react-icons/ai';
+import { MdNordicWalking } from 'react-icons/md';
+
 export const navLinks = [
   {
     path: '#aboutUs',
     text: 'Ko smo mi',
-    icon: 'K',
+    icon: AiOutlineApartment,
   },
   {
     path: '#activities',
     text: 'Aktivnosti',
-    icon: 'A',
+    icon: MdNordicWalking,
   },
   {
     path: '#contact',
     text: 'Kontakt',
-    icon: 'K',
+    icon: AiOutlineContacts,
   },
 ];
