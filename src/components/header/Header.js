@@ -7,6 +7,7 @@ import { useCallback, useState } from 'react';
 import { Fade as Hamburger } from 'hamburger-react';
 import { Nav } from './Nav';
 import { ContactInfo } from './ContactInfo';
+import { Container } from '../Container';
 
 export const Header = () => {
   const [showNav, setShowNav] = useState(false);
@@ -29,37 +30,39 @@ export const Header = () => {
         right: 0,
       }}
     >
-      <Flex
-        sx={{
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-      >
-        <ContactInfo />
-        <a
-          href="#home"
+      <Container>
+        <Flex
           sx={{
-            height: ['50px', null, '100px'],
-            display: 'block',
-            pl: 3,
+            justifyContent: 'space-between',
+            alignItems: 'center',
           }}
-          onClick={closeNav}
         >
-          <img src={logo} alt="" sx={{ height: '100%' }} />
-        </a>
-        <Box sx={{ display: [null, null, 'none'] }}>
-          <Hamburger
-            size={20}
-            toggled={showNav}
-            toggle={setShowNav}
-            label="Show menu"
-            direction="right"
-            color="black"
-          />
-        </Box>
-        <Nav />
-      </Flex>
-      <MobileNav showNav={showNav} onNavigate={closeNav} />
+          <ContactInfo />
+          <a
+            href="#home"
+            sx={{
+              height: ['50px', null, '75px', null, '85px', '100px'],
+              display: 'block',
+              pl: [3, null, 0],
+            }}
+            onClick={closeNav}
+          >
+            <img src={logo} alt="" sx={{ height: '100%' }} />
+          </a>
+          <Box sx={{ display: [null, null, 'none'] }}>
+            <Hamburger
+              size={20}
+              toggled={showNav}
+              toggle={setShowNav}
+              label="Show menu"
+              direction="right"
+              color="black"
+            />
+          </Box>
+          <Nav />
+        </Flex>
+        <MobileNav showNav={showNav} onNavigate={closeNav} />
+      </Container>
     </Box>
   );
 };
