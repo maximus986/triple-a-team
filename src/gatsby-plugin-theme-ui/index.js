@@ -126,8 +126,8 @@ export default {
     },
   },
   fonts: {
-    body: 'Ubuntu, sans-serif',
-    heading: 'Ubuntu, sans-serif',
+    body: 'Josefin Sans, sans-serif',
+    heading: 'Amatic SC, cursive',
   },
   breakpoints: ['576px', '768px', '992px', '1200px', '1400px'],
   space: [

@@ -55,8 +55,10 @@ const ContactInfoLink = ({ Icon, to, children }) => {
         sx={{
           borderBottom: `1px solid red`,
           pb: 0,
-          fontSize: 0,
+          fontSize: 1,
         }}
+        target="_blank"
+        rel="noopener noreferrer"
       >
         {children}
       </a>

@@ -42,7 +42,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`ubuntu:300,400,400i,700`],
+        fonts: [`Amatic SC:300,400,400i,700`, `Josefin Sans:300,400,400i,700`],
         display: 'swap',
       },
     },
