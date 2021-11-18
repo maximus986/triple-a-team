@@ -8,7 +8,7 @@ export default {
     tertiary: '#004452',
     textPrimary: '#0c0d24',
     primaryPassive: '#f1f1e6',
-    primaryBackground: '#1d1e22',
+    primaryBackground: '#fff',
     secondaryBackground: '#fff',
     secondaryBackgroundActive: '#17181b',
     muted: '#e9e9e9',
@@ -158,7 +158,7 @@ export default {
     },
     heading1: {
       variant: 'text.heading',
-      fontSize: [10, 12, null, null, null, 13], // 36, 40
+      fontSize: [12, null, null, null, 13], // 36, 40
       color: 'primaryBackground',
       lineHeight: ['heading', 'normal', null, null, null, 'heading'],
       mb: 3, // 8

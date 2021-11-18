@@ -5,12 +5,9 @@ import { AboutUs, Activities, Banner, Container, Seo } from 'components';
 const IndexPage = () => (
   <div>
     <Seo title="3ATeam" />
-    <Container>
-      <h1 sx={{ color: 'primary' }}>Triple A team</h1>
-      <Banner />
-      <AboutUs />
-      <Activities />
-    </Container>
+    <Banner />
+    <AboutUs />
+    <Activities />
   </div>
 );
 
