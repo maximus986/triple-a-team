@@ -1,8 +1,17 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
+import { Paragraph } from '@theme-ui/components';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
+import { SectionContainer } from './SectionContainer';
 
 export const AboutUs = () => {
-  const { contentfulAboutUs } = useStaticQuery(graphql`
+  const {
+    contentfulAboutUs: {
+      sectionTitle,
+      aboutUsDescription: { aboutUsDescription },
+    },
+  } = useStaticQuery(graphql`
     {
       contentfulAboutUs {
         sectionTitle
@@ -14,9 +23,8 @@ export const AboutUs = () => {
   `);
 
   return (
-    <div>
-      <h2>{contentfulAboutUs?.sectionTitle}</h2>
-      {/* <pre>{JSON.stringify(contentfulAboutUs, null, 2)}</pre> */}
-    </div>
+    <SectionContainer sectionTitle={sectionTitle}>
+      <Paragraph sx={{ mx: [4, 0] }}>{aboutUsDescription}</Paragraph>
+    </SectionContainer>
   );
 };

@@ -1,6 +1,6 @@
-import React from 'react';
 /** @jsx jsx */
 import { jsx, Flex } from 'theme-ui';
+import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import { convertToBgImage } from 'gbimage-bridge';
