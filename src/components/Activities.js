@@ -1,8 +1,11 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
+import { SectionContainer } from './SectionContainer';
 
 export const Activities = () => {
-  const { contentfulActivitySection } = useStaticQuery(graphql`
+  const {
+    contentfulActivitySection: { activitySectionTitle },
+  } = useStaticQuery(graphql`
     {
       contentfulActivitySection {
         activitySectionTitle
@@ -21,9 +24,6 @@ export const Activities = () => {
     }
   `);
   return (
-    <div>
-      <h2>{contentfulActivitySection?.activitySectionTitle}</h2>
-      {/* <pre>{JSON.stringify(contentfulActivitySection, null, 2)}</pre> */}
-    </div>
+    <SectionContainer sectionTitle={activitySectionTitle}></SectionContainer>
   );
 };
