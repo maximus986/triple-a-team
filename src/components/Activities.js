@@ -1,29 +1,47 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import React from 'react';
+import React, { Fragment } from 'react';
 import { SectionContainer } from './SectionContainer';
+import { Grid } from '@theme-ui/components';
+import { Activity } from './Activity';
 
 export const Activities = () => {
   const {
-    contentfulActivitySection: { activitySectionTitle },
+    contentfulActivitySection: { activitySectionTitle, activities },
   } = useStaticQuery(graphql`
     {
       contentfulActivitySection {
         activitySectionTitle
-        activity {
+        activities: activity {
           activityCategory
           activityDescription {
             activityDescription
           }
+          id
           activityImage {
-            fluid(toFormat: WEBP) {
-              src
-            }
+            title
+            gatsbyImageData(
+              formats: WEBP
+              layout: FULL_WIDTH
+              placeholder: BLURRED
+              breakpoints: [576, 768, 992, 1200, 1400]
+              aspectRatio: 1.6
+            )
           }
         }
       }
     }
   `);
   return (
-    <SectionContainer sectionTitle={activitySectionTitle}></SectionContainer>
+    <SectionContainer sectionTitle={activitySectionTitle}>
+      <Grid gap={[4]} columns={[1, null, null, null, [(2, '1fr 1fr 1fr')]]}>
+        {activities.map((activity) => {
+          return (
+            <Fragment key={activity.id}>
+              <Activity activity={activity} />
+            </Fragment>
+          );
+        })}
+      </Grid>
+    </SectionContainer>
   );
 };

@@ -3,8 +3,8 @@ export default {
   useBodyStyles: true,
   colors: {
     textPassive: '#666',
-    primary: '#006877',
-    secondary: '#D1EBE3',
+    primary: '#113F00',
+    secondary: '#F8FFE6',
     tertiary: '#004452',
     textPrimary: '#0c0d24',
     primaryPassive: '#f1f1e6',
@@ -12,7 +12,7 @@ export default {
     secondaryBackground: '#fff',
     secondaryBackgroundActive: '#17181b',
     muted: '#e9e9e9',
-    primaryOpacity2: 'rgba(0, 103, 119, 0.2)',
+    primaryOpacity_07: 'rgba(17, 63, 0, 0.7)',
     alert: '#FF4963',
     modes: {
       dark: {
