@@ -8,9 +8,12 @@ import { Fade as Hamburger } from 'hamburger-react';
 import { Nav } from './Nav';
 import { ContactInfo } from './ContactInfo';
 import { Container } from '../Container';
+import { useScroll } from 'hooks';
 
 export const Header = () => {
   const [showNav, setShowNav] = useState(false);
+
+  const scroll = useScroll();
 
   const closeNav = useCallback(() => {
     setShowNav(false);
@@ -29,6 +32,7 @@ export const Header = () => {
         left: 0,
         right: 0,
         zIndex: 1000,
+        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2)',
       }}
     >
       <Container>
@@ -42,9 +46,17 @@ export const Header = () => {
           <a
             href="#home"
             sx={{
-              height: ['50px', null, '75px', null, '85px', '100px'],
+              height: [
+                '50px',
+                null,
+                scroll ? '55px' : ' 75px',
+                null,
+                scroll ? '65px' : '85px',
+                scroll ? '80px' : '100px',
+              ],
               display: 'block',
               pl: [3, null, 0],
+              transition: 'all 0.3s ease',
             }}
             onClick={closeNav}
           >

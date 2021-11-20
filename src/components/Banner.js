@@ -30,6 +30,7 @@ export const Banner = () => {
         nodes {
           title
           image {
+            title
             gatsbyImageData(
               formats: WEBP
               layout: FULL_WIDTH
@@ -56,9 +57,10 @@ export const Banner = () => {
               sx={{
                 height: ['35vh', null, '50vh', null, '70vh'],
               }}
+              alt="image"
             >
               <Container>
-                <Flex sx={{ mt: [8, 10, 12, 14], justifyContent: 'center' }}>
+                <Flex sx={{ mt: [8, 10, 18, 22], justifyContent: 'center' }}>
                   <h1>{banner.title}</h1>
                 </Flex>
               </Container>

@@ -10,7 +10,7 @@ const Layout = ({ children }) => (
       sx={{
         width: '100%',
         flex: '1 1 auto',
-        pt: ['62px', null, '87px', null, '97px', '112px'],
+        pt: ['62px', null, 0],
       }}
     >
       {children}
