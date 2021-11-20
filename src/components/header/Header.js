@@ -2,18 +2,15 @@
 import { jsx } from 'theme-ui';
 import { Box, Flex } from '@theme-ui/components';
 import { MobileNav } from './MobileNav';
-import logo from 'images/logo.png';
 import { useCallback, useState } from 'react';
-import { Fade as Hamburger } from 'hamburger-react';
 import { Nav } from './Nav';
 import { ContactInfo } from './ContactInfo';
 import { Container } from '../Container';
-import { useScroll } from 'hooks';
+import { Logo } from './Logo';
+import { MobileMenuButton } from './MobileMenuButton';
 
 export const Header = () => {
   const [showNav, setShowNav] = useState(false);
-
-  const scroll = useScroll();
 
   const closeNav = useCallback(() => {
     setShowNav(false);
@@ -43,35 +40,8 @@ export const Header = () => {
           }}
         >
           <ContactInfo />
-          <a
-            href="#home"
-            sx={{
-              height: [
-                '50px',
-                null,
-                scroll ? '55px' : ' 75px',
-                null,
-                scroll ? '65px' : '85px',
-                scroll ? '80px' : '100px',
-              ],
-              display: 'block',
-              pl: [3, null, 0],
-              transition: 'all 0.3s ease',
-            }}
-            onClick={closeNav}
-          >
-            <img src={logo} alt="" sx={{ height: '100%' }} />
-          </a>
-          <Box sx={{ display: [null, null, 'none'] }}>
-            <Hamburger
-              size={20}
-              toggled={showNav}
-              toggle={setShowNav}
-              label="Show menu"
-              direction="right"
-              color="black"
-            />
-          </Box>
+          <Logo onCloseNav={closeNav} />
+          <MobileMenuButton toggle={setShowNav} toggled={showNav} />
           <Nav />
         </Flex>
         <MobileNav showNav={showNav} onNavigate={closeNav} />
