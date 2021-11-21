@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
+import { Footer } from './Footer';
 import { Header } from './header/Header';
 
 const Layout = ({ children }) => (
@@ -15,14 +16,7 @@ const Layout = ({ children }) => (
     >
       {children}
     </main>
-    <div
-      sx={{
-        width: '100%',
-        background: 'purple',
-      }}
-    >
-      Footer
-    </div>
+    <Footer />
   </div>
 );
 
