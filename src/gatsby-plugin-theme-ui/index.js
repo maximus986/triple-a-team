@@ -3,15 +3,12 @@ export default {
   useBodyStyles: true,
   colors: {
     primary: '#113F00',
-    textPassive: '#666',
     secondary: '#F8FFE6',
-    tertiary: '#004452',
     text: '#4C5356',
     textStrong: '#0c0d24',
     primaryPassive: '#f1f1e6',
     primaryBackground: '#fff',
-    secondaryBackground: '#17181b',
-    secondaryBackgroundActive: '#17181b',
+    secondaryBackground: '#202D0B',
     muted: '#e9e9e9',
     primaryOpacity_07: 'rgba(17, 63, 0, 0.7)',
     alert: '#BF0001',
@@ -44,87 +41,6 @@ export default {
       borderRadius: 'default',
       '&:hover': {
         transform: 'translateY(-5px)',
-      },
-    },
-    secondary: {
-      bg: 'primary',
-      color: 'white',
-      fontWeight: 'bold',
-      width: '170px',
-      height: '55px',
-      transition: 'button',
-      '&:hover': {
-        bg: 'tertiary',
-      },
-    },
-    primarySmall: {
-      color: 'primaryBackground',
-      bg: 'primary',
-      width: '150px',
-      height: '43px',
-      boxShadow: `0 15px 15px rgba(0, 103, 119, 0.2)`,
-      position: 'relative',
-      transition: 'button',
-      '&:hover': {
-        transform: 'translateY(-5px)',
-      },
-    },
-    button: {
-      display: 'inline-block',
-      color: 'muted',
-      transition: 'button',
-      '&:hover': {
-        color: 'primary',
-      },
-    },
-    outlineLarge: {
-      bg: 'transparent',
-      width: '260px',
-      height: '60px',
-      color: 'primaryBackground',
-      fontWeight: 'bold',
-      borderWidth: '2px',
-      borderStyle: 'solid',
-      borderColor: 'primaryBackground',
-      textTransform: 'uppercase',
-      transition: 'button',
-      '&:hover': {
-        borderColor: 'primary',
-        bg: 'primary',
-      },
-    },
-    outlineRegular: {
-      bg: 'transparent',
-      width: '190px',
-      height: '55px',
-      color: 'primary',
-      fontWeight: 'normal',
-      borderWidth: '1px',
-      borderStyle: 'solid',
-      borderColor: 'muted',
-      textTransform: 'capitalize',
-      transition: 'button',
-      '&:hover': {
-        borderColor: 'primary',
-        bg: 'primary',
-        color: 'primaryBackground',
-      },
-    },
-    outlineSmall: {
-      bg: 'transparent',
-      width: '127px',
-      height: '40px',
-      color: 'text',
-      fontWeight: 'normal',
-      borderWidth: '1px',
-      borderStyle: 'solid',
-      borderColor: 'muted',
-      textTransform: 'capitalize',
-      transition: 'button',
-      '&:hover': {
-        borderColor: 'primary',
-        bg: 'primary',
-        color: 'primaryBackground',
       },
     },
   },
@@ -171,16 +87,6 @@ export default {
       fontSize: [8, 9], // 36, 40
       mb: 1, // 8
     },
-    heading3: {
-      variant: 'text.heading',
-      fontSize: [7, 8], // 36, 40
-      mb: 3, // 8
-    },
-    heading4: {
-      variant: 'text.heading',
-      fontSize: 5, // 24
-      mb: 1, // 8
-    },
     paragraph: { m: 0, fontWeight: 'normal' },
     link: {
       textDecoration: 'none',
@@ -196,33 +102,19 @@ export default {
       bg: 'primaryBackground',
       lineHeight: 'body',
       scrollBehavior: 'smooth',
-
       '&::-webkit-scrollbar': {
         width: '4px',
-        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        backgroundColor: 'primaryOpacity_07',
       },
       '&::-webkit-scrollbar-thumb': {
         bg: 'primary',
       },
       m: 0,
-      overflowX: 'hidden', // Prevent horizontal scroll created in announcement section
       h1: {
         variant: 'text.heading1',
       },
       h2: {
         variant: 'text.heading2',
-      },
-      h3: {
-        variant: 'text.heading3',
-      },
-      h4: {
-        variant: 'text.heading4',
-      },
-      h5: {
-        variant: 'text.heading4',
-      },
-      h6: {
-        variant: 'text.heading4',
       },
       p: {
         variant: 'text.paragraph',
@@ -235,11 +127,6 @@ export default {
       },
       ul: { listStyle: 'none', p: 0 },
       figure: { m: 0 },
-      hr: {
-        height: '1px',
-        width: '100%',
-        maxWidth: '400px',
-      },
     },
   },
   radii: {
