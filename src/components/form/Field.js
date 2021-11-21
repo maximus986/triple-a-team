@@ -18,6 +18,7 @@ export const Field = ({ register, name, placeholder, validation, errors }) => {
           borderColor: 'muted',
           fontSize: 2,
           px: 4,
+          borderRadius: 'default',
           '&:focus': {
             outline: 'none',
             borderColor: 'primary',

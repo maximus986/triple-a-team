@@ -26,13 +26,20 @@ const EMAIL_REGEX =
 const PHONE_NUMBER_REGEX =
   /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
 
+const REQUIRED_FIELD_ERROR_MESSAGE = 'Ovo polje je obavezno.';
+
 export const Form = () => {
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm({ defaultValues, mode: 'onBlur', reValidateMode: 'onChange' });
+  } = useForm({
+    defaultValues,
+    mode: 'onSubmit',
+    reValidateMode: 'onChange',
+    shouldFocusError: true,
+  });
 
   const onSubmit = (data, e) => {
     e.preventDefault();
@@ -49,7 +56,7 @@ export const Form = () => {
         navigate(`/success`);
         reset(defaultValues);
       })
-      .catch(() => alert(t('serverError')));
+      .catch(() => alert('Došlo je do greške, molimo pokušajte ponovo.'));
   };
 
   return (
@@ -72,11 +79,11 @@ export const Form = () => {
         <div>
           <FormGroup>
             <Field
-              name="name"
+              name="firstName"
               placeholder="Ime*"
               register={register}
               validation={{
-                required: 'Ovo polje je obavezno.',
+                required: REQUIRED_FIELD_ERROR_MESSAGE,
               }}
               errors={errors.firstName}
             />
@@ -87,7 +94,7 @@ export const Form = () => {
               placeholder="Prezime*"
               register={register}
               validation={{
-                required: 'Ovo polje je obavezno.',
+                required: REQUIRED_FIELD_ERROR_MESSAGE,
               }}
               errors={errors.lastName}
             />
@@ -98,7 +105,7 @@ export const Form = () => {
               placeholder="Email*"
               register={register}
               validation={{
-                required: 'Ovo polje je obavezno.',
+                required: REQUIRED_FIELD_ERROR_MESSAGE,
                 pattern: {
                   value: EMAIL_REGEX,
                   message: 'Uneta email adresa nije validna.',
@@ -113,7 +120,7 @@ export const Form = () => {
               placeholder="Telefon*"
               register={register}
               validation={{
-                required: 'Ovo polje je obavezno.',
+                required: REQUIRED_FIELD_ERROR_MESSAGE,
                 pattern: {
                   value: PHONE_NUMBER_REGEX,
                   message: 'Uneti format telefona nije validan.',
@@ -139,6 +146,7 @@ export const Form = () => {
               fontSize: 2,
               padding: 4,
               height: ['300px', null, null, '100%'],
+              borderRadius: 'default',
               '&:focus': {
                 outline: 'none',
                 borderColor: 'primary',
@@ -197,10 +205,10 @@ const SubmitButton = ({ isSubmitting }) => {
           title="Loading"
           size={24}
           strokeWidth={2}
-          sx={{ color: 'secondary' }}
+          sx={{ color: 'primaryBackground' }}
         />
       ) : (
-        <span>submit</span>
+        <span>Pošalji</span>
       )}
     </StyledSubmitButton>
   );
