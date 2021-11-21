@@ -13,12 +13,12 @@ export const Field = ({ register, name, placeholder, validation, errors }) => {
         placeholder={placeholder}
         {...register(name, validation)}
         sx={{
-          color: 'textPrimary',
+          color: 'text',
           fontFamily: 'body',
-          borderColor: 'muted',
           fontSize: 2,
           px: 4,
           borderRadius: 'default',
+          borderColor: 'muted',
           '&:focus': {
             outline: 'none',
             borderColor: 'primary',

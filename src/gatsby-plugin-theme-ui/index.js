@@ -6,10 +6,11 @@ export default {
     textPassive: '#666',
     secondary: '#F8FFE6',
     tertiary: '#004452',
-    textPrimary: '#0c0d24',
+    text: '#4C5356',
+    textStrong: '#0c0d24',
     primaryPassive: '#f1f1e6',
     primaryBackground: '#fff',
-    secondaryBackground: '#fff',
+    secondaryBackground: '#17181b',
     secondaryBackgroundActive: '#17181b',
     muted: '#e9e9e9',
     primaryOpacity_07: 'rgba(17, 63, 0, 0.7)',
@@ -113,7 +114,7 @@ export default {
       bg: 'transparent',
       width: '127px',
       height: '40px',
-      color: 'textPrimary',
+      color: 'text',
       fontWeight: 'normal',
       borderWidth: '1px',
       borderStyle: 'solid',
@@ -153,7 +154,7 @@ export default {
   text: {
     heading: {
       fontFamily: 'heading',
-      color: 'textPrimary',
+      color: 'textStrong',
       fontWeight: 'bold',
       lineHeight: 'heading',
       m: 0,
@@ -180,7 +181,7 @@ export default {
       fontSize: 5, // 24
       mb: 1, // 8
     },
-    paragraph: { m: 0 },
+    paragraph: { m: 0, fontWeight: 'normal' },
     link: {
       textDecoration: 'none',
       color: 'inherit',
@@ -191,7 +192,7 @@ export default {
       fontFamily: 'body',
       fontWeight: 'normal',
       fontSize: 2,
-      color: 'textPassive',
+      color: 'text',
       bg: 'primaryBackground',
       lineHeight: 'body',
       scrollBehavior: 'smooth',

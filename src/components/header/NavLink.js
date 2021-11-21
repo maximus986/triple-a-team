@@ -18,7 +18,7 @@ export const NavLink = ({ to, onNavigate, Icon, children, isLinkActive }) => {
         onClick={onNavigate}
         sx={{
           fontSize: [4, null, 2],
-          color: isLinkActive ? 'primaryBackground' : 'textPassive',
+          color: isLinkActive ? 'primaryBackground' : 'text',
           alignItems: 'center',
           transition: 'default',
           bg: isLinkActive ? 'primary' : 'transparent',

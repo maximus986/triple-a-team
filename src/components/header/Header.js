@@ -20,7 +20,7 @@ export const Header = () => {
     <Box
       as="header"
       sx={{
-        bg: 'secondaryBackground',
+        bg: 'primaryBackground',
         pr: [0, 0, 3],
         pt: [3],
         pb: 2,

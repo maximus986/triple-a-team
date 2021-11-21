@@ -140,7 +140,7 @@ export const Form = () => {
             placeholder="Poruka*"
             {...register('message', { required: 'Ovo polje je obavezno.' })}
             sx={{
-              color: 'textPrimary',
+              color: 'text',
               fontFamily: 'body',
               borderColor: 'muted',
               fontSize: 2,
