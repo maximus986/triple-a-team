@@ -41,7 +41,7 @@ export const Logo = ({ onCloseNav }) => {
         ],
         display: 'block',
         pl: [3, null, 0],
-        transition: 'all 0.3s ease',
+        transition: 'default',
       }}
       onClick={() => handleLogoClick()}
     >

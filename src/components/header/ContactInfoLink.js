@@ -12,7 +12,7 @@ export const ContactInfoLink = ({ Icon, to, children }) => {
         pb: 0,
         fontSize: 1,
         alignItems: 'center',
-        transition: '0.3s ease',
+        transition: 'default',
         '&:hover': {
           color: 'primary',
         },

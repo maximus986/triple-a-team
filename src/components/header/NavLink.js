@@ -20,10 +20,10 @@ export const NavLink = ({ to, onNavigate, Icon, children, isLinkActive }) => {
           fontSize: [4, null, 2],
           color: isLinkActive ? 'primaryBackground' : 'textPassive',
           alignItems: 'center',
-          transition: '0.3s ease',
+          transition: 'default',
           bg: isLinkActive ? 'primary' : 'transparent',
           '&:hover': { bg: 'primary', color: 'primaryBackground' },
-          borderRadius: [null, null, 'navLink'],
+          borderRadius: [null, null, 'default'],
           px: [4, null, 3, 4],
           py: [3, null, 4],
         }}

@@ -13,12 +13,13 @@ export default {
     secondaryBackgroundActive: '#17181b',
     muted: '#e9e9e9',
     primaryOpacity_07: 'rgba(17, 63, 0, 0.7)',
-    alert: '#FF4963',
+    alert: '#BF0001',
     modes: {
       dark: {
         text: '#fff',
         background: '#000',
-        primary: '#0cf',
+        primary: '#113F00',
+        // TODO: Add dark mode colors
       },
     },
   },
@@ -36,9 +37,10 @@ export default {
       bg: 'primary',
       width: '220px',
       height: '55px',
-      boxShadow: `0 15px 15px rgba(0, 103, 119, 0.2)`,
+      boxShadow: `0 5px 15px rgba(0, 0, 0, 0.2)`,
       position: 'relative',
       transition: 'button',
+      borderRadius: 'default',
       '&:hover': {
         transform: 'translateY(-5px)',
       },
@@ -241,13 +243,10 @@ export default {
   },
   radii: {
     reset: 0,
-    image: 10,
-    navLink: 16,
+    default: 16,
   },
-  transition: {
+  transitions: {
     button: '0.5s ease',
-    imageLink: '0.4s ease',
-    link: '0.3s ease',
-    imageLinkLong: '1s ease',
+    default: '0.3s ease',
   },
 };

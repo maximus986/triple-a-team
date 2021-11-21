@@ -15,7 +15,7 @@ export const Activity = ({
       <Box
         sx={{
           position: 'relative',
-          borderRadius: [0, '16px'],
+          borderRadius: [0, 'default'],
           overflow: 'hidden',
         }}
       >

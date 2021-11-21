@@ -10,7 +10,7 @@ export const MobileNav = ({ showNav, onNavigate }) => (
     sx={{
       height: showNav ? '250px' : 0,
       overflow: 'hidden',
-      transition: 'height 0.3s ease',
+      transition: 'default',
       display: [null, null, 'none'],
     }}
   >
