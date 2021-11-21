@@ -5,3 +5,4 @@ export { Button } from './Button';
 export { AboutUs } from './AboutUs';
 export { Banner } from './Banner';
 export { Activities } from './Activities';
+export { Contact } from './Contact';

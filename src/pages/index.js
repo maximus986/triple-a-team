@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { AboutUs, Activities, Banner, Container, Seo } from 'components';
+import { AboutUs, Activities, Banner, Contact, Seo } from 'components';
 
 const IndexPage = () => (
   <div>
@@ -8,6 +8,7 @@ const IndexPage = () => (
     <Banner />
     <AboutUs />
     <Activities />
+    <Contact />
   </div>
 );
 
