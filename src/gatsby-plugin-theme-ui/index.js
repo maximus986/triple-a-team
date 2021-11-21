@@ -14,10 +14,16 @@ export default {
     alert: '#BF0001',
     modes: {
       dark: {
-        text: '#fff',
-        background: '#000',
         primary: '#113F00',
-        // TODO: Add dark mode colors
+        secondary: '#F8FFE6',
+        text: '#4C5356',
+        textStrong: '#0c0d24',
+        primaryPassive: '#f1f1e6',
+        primaryBackground: '#fff',
+        secondaryBackground: '#202D0B',
+        muted: '#e9e9e9',
+        primaryOpacity_07: 'rgba(17, 63, 0, 0.7)',
+        alert: '#BF0001',
       },
     },
   },
