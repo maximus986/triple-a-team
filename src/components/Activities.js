@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 import { SectionContainer } from './SectionContainer';
 import { Grid } from '@theme-ui/components';
 import { Activity } from './Activity';
+import { Target } from './Target';
 
 export const Activities = () => {
   const {
@@ -32,16 +33,28 @@ export const Activities = () => {
     }
   `);
   return (
-    <SectionContainer sectionTitle={activitySectionTitle}>
-      <Grid gap={[4]} columns={[1, null, null, null, [(2, '1fr 1fr 1fr')]]}>
-        {activities.map((activity) => {
-          return (
-            <Fragment key={activity.id}>
-              <Activity activity={activity} />
-            </Fragment>
-          );
-        })}
-      </Grid>
-    </SectionContainer>
+    <>
+      <Target target="activities" />
+      <SectionContainer sectionTitle={activitySectionTitle}>
+        <Grid gap={[4]} columns={[1, null, null, null, [(2, '1fr 1fr 1fr')]]}>
+          {activities.map((activity) => {
+            return (
+              <Fragment key={activity.id}>
+                <Activity activity={activity} />
+              </Fragment>
+            );
+          })}
+        </Grid>
+        <Grid gap={[4]} columns={[1, null, null, null, [(2, '1fr 1fr 1fr')]]}>
+          {activities.map((activity) => {
+            return (
+              <Fragment key={activity.id}>
+                <Activity activity={activity} />
+              </Fragment>
+            );
+          })}
+        </Grid>
+      </SectionContainer>
+    </>
   );
 };

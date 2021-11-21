@@ -8,9 +8,15 @@ export const SectionContainer = ({
   children,
 }) => {
   return (
-    <section sx={{ pt: [8, null, 9, 11], bg }}>
+    <section sx={{ mt: [11, null, 9, 11], bg }}>
       <Container>
-        <h2 sx={{ textAlign: 'center', mb: [7, null, null, null], px: [4, 0] }}>
+        <h2
+          sx={{
+            textAlign: 'center',
+            mb: [7, null, null, null],
+            px: [4, 0],
+          }}
+        >
           {sectionTitle}
         </h2>
         {children}

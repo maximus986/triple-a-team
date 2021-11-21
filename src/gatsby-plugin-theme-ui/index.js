@@ -192,6 +192,8 @@ export default {
       color: 'textPassive',
       bg: 'primaryBackground',
       lineHeight: 'body',
+      scrollBehavior: 'smooth',
+
       '&::-webkit-scrollbar': {
         width: '4px',
         backgroundColor: 'rgba(0, 0, 0, 0.7)',
