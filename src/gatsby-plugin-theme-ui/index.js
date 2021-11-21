@@ -2,8 +2,8 @@ export default {
   initialColorModeName: 'light',
   useBodyStyles: true,
   colors: {
-    textPassive: '#666',
     primary: '#113F00',
+    textPassive: '#666',
     secondary: '#F8FFE6',
     tertiary: '#004452',
     textPrimary: '#0c0d24',
