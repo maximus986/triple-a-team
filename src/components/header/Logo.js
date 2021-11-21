@@ -1,10 +1,24 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import logo from 'images/logo.png';
 import { useScroll } from 'hooks';
 import { navigate } from '@reach/router';
+import { graphql, useStaticQuery } from 'gatsby';
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 
 export const Logo = ({ onCloseNav }) => {
+  const { logoImage } = useStaticQuery(graphql`
+    {
+      logoImage: file(relativePath: { eq: "logo.png" }) {
+        name
+        childImageSharp {
+          gatsbyImageData(formats: PNG, placeholder: BLURRED)
+        }
+      }
+    }
+  `);
+
+  // Logo is a png and that's why gatsby image is used. Logo should be svg, but client didn't provide.
+  const image = getImage(logoImage.childImageSharp);
   const scroll = useScroll();
 
   const handleLogoClick = () => {
@@ -31,7 +45,11 @@ export const Logo = ({ onCloseNav }) => {
       }}
       onClick={() => handleLogoClick()}
     >
-      <img src={logo} alt="" sx={{ height: '100%' }} />
+      <GatsbyImage
+        image={image}
+        alt={logoImage.name}
+        sx={{ height: '100%', '& > div': { height: '100%' } }}
+      />
     </a>
   );
 };
