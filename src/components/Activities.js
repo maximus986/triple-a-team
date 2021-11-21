@@ -45,15 +45,6 @@ export const Activities = () => {
             );
           })}
         </Grid>
-        <Grid gap={[4]} columns={[1, null, null, null, [(2, '1fr 1fr 1fr')]]}>
-          {activities.map((activity) => {
-            return (
-              <Fragment key={activity.id}>
-                <Activity activity={activity} />
-              </Fragment>
-            );
-          })}
-        </Grid>
       </SectionContainer>
     </>
   );

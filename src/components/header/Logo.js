@@ -2,12 +2,20 @@
 import { jsx } from 'theme-ui';
 import logo from 'images/logo.png';
 import { useScroll } from 'hooks';
+import { navigate } from '@reach/router';
 
 export const Logo = ({ onCloseNav }) => {
   const scroll = useScroll();
+
+  const handleLogoClick = () => {
+    onCloseNav();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigate('/');
+  };
+
   return (
     <a
-      href="#home"
+      href="javascript:void(0);"
       sx={{
         height: [
           '50px',
@@ -21,7 +29,7 @@ export const Logo = ({ onCloseNav }) => {
         pl: [3, null, 0],
         transition: 'all 0.3s ease',
       }}
-      onClick={onCloseNav}
+      onClick={() => handleLogoClick()}
     >
       <img src={logo} alt="" sx={{ height: '100%' }} />
     </a>
