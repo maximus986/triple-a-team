@@ -32,12 +32,11 @@ export const Logo = ({ onCloseNav }) => {
       href="javascript:void(0);"
       sx={{
         height: [
-          '50px',
-          null,
-          scroll ? '55px' : ' 75px',
-          null,
-          scroll ? '65px' : '85px',
-          scroll ? '80px' : '100px',
+          '40px',
+          '45px',
+          scroll ? '45px' : ' 65px',
+          scroll ? '55px' : '75px',
+          scroll ? '70px' : '90px',
         ],
         display: 'block',
         pl: [3, null, 0],
