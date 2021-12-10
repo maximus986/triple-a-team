@@ -2,10 +2,8 @@ import { Box } from '@theme-ui/components';
 import React from 'react';
 import { navLinks } from 'static/nav-links';
 import { NavLink } from './NavLink';
-import { useLocation } from '@reach/router';
 
 export const NavItems = ({ onNavigate }) => {
-  const location = useLocation();
   return (
     <Box
       as="ul"
@@ -15,14 +13,12 @@ export const NavItems = ({ onNavigate }) => {
         .filter((link) => link.path !== 'hero')
         .map(({ path, text, icon }) => {
           const Icon = icon;
-          const isActive = location.hash === path;
           return (
             <NavLink
               onNavigate={onNavigate}
               to={path}
               key={path}
               Icon={<Icon />}
-              isLinkActive={isActive}
             >
               {text}
             </NavLink>

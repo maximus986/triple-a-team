@@ -2,7 +2,6 @@
 import { useMemo } from 'react';
 import { jsx } from 'theme-ui';
 import { useScroll } from 'hooks';
-import { navigate } from '@reach/router';
 import { graphql, useStaticQuery } from 'gatsby';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import { navLinks } from 'static/nav-links';

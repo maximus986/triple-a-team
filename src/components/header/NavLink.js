@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui';
 import { Flex } from '@theme-ui/components';
 import { IconContainer } from './IconContainer';
 
-export const NavLink = ({ to, onNavigate, Icon, children, isLinkActive }) => {
+export const NavLink = ({ to, onNavigate, Icon, children }) => {
   return (
     <li
       sx={{

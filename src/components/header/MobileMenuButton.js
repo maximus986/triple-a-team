@@ -7,6 +7,7 @@ export const MobileMenuButton = ({ toggle, toggled }) => {
   const {
     theme: { colors },
   } = useThemeUI();
+
   return (
     <Box sx={{ display: [null, null, 'none'] }}>
       <Hamburger

@@ -8,6 +8,7 @@ import { ContactInfo } from './ContactInfo';
 import { Container } from '../Container';
 import { Logo } from './Logo';
 import { MobileMenuButton } from './MobileMenuButton';
+import { useShowNav } from 'hooks';
 
 export const Header = () => {
   const [showNav, setShowNav] = useState(false);
@@ -15,6 +16,12 @@ export const Header = () => {
   const closeNav = useCallback(() => {
     setShowNav(false);
   }, []);
+
+  const display = useShowNav();
+
+  if (!display) {
+    return null;
+  }
 
   return (
     <Box
