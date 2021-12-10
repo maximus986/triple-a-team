@@ -10,18 +10,21 @@ export const NavLink = ({ to, onNavigate, Icon, children, isLinkActive }) => {
         '&:nth-of-type(2)': {
           mx: [null, null, 2, 3],
         },
+        '& a.active-scroll-spy': {
+          color: 'primaryBackground',
+          bg: 'primary',
+        },
       }}
     >
       <Flex
         as="a"
-        href={to}
+        href={`#${to}`}
+        data-to-scrollspy-id={to}
         onClick={onNavigate}
         sx={{
           fontSize: [4, null, 2],
-          color: isLinkActive ? 'primaryBackground' : 'text',
           alignItems: 'center',
           transition: 'default',
-          bg: isLinkActive ? 'primary' : 'transparent',
           '&:hover': { bg: 'primary', color: 'primaryBackground' },
           borderRadius: [null, null, 'default'],
           px: [4, null, 3, 4],

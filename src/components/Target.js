@@ -2,11 +2,13 @@
 import React from 'react';
 import { jsx } from 'theme-ui';
 
-export const Target = ({ target }) => {
+export const Target = ({ target, children }) => {
   return (
     <div
       id={target}
-      sx={{ scrollMarginTop: ['10px', null, '30px', '20px', '30px', '50px'] }}
-    />
+      sx={{ scrollMarginTop: ['70px', null, '70px', '80px', '100px', '100px'] }}
+    >
+      {children}
+    </div>
   );
 };

@@ -6,13 +6,12 @@ import { Target } from './Target';
 
 export const Contact = () => {
   return (
-    <>
-      <Target target="contact" />
+    <div id="contact">
       <SectionContainer sectionTitle="Kontakt">
         <Box sx={{ mx: [4, 0] }}>
           <Form />
         </Box>
       </SectionContainer>
-    </>
+    </div>
   );
 };

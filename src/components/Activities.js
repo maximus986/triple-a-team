@@ -33,8 +33,7 @@ export const Activities = () => {
     }
   `);
   return (
-    <>
-      <Target target="activities" />
+    <Target target="activities">
       <SectionContainer sectionTitle={activitySectionTitle}>
         <Grid gap={[4]} columns={[1, null, null, null, [(2, '1fr 1fr 1fr')]]}>
           {activities.map((activity) => {
@@ -46,6 +45,6 @@ export const Activities = () => {
           })}
         </Grid>
       </SectionContainer>
-    </>
+    </Target>
   );
 };

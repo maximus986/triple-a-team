@@ -12,7 +12,7 @@ export const Nav = () => {
         justifyContent: 'flex-end',
       }}
     >
-      {/* TODO: ry to use useNavigation */}
+      {/* TODO: Try to use useNavigation */}
       <NavItems onNavigate={() => null} />
     </Flex>
   );

@@ -24,11 +24,10 @@ export const AboutUs = () => {
   `);
 
   return (
-    <>
-      <Target target="aboutUs" />
+    <Target target="aboutUs">
       <SectionContainer sectionTitle={sectionTitle}>
         <Paragraph sx={{ mx: [4, 0] }}>{aboutUsDescription}</Paragraph>
       </SectionContainer>
-    </>
+    </Target>
   );
 };

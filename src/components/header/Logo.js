@@ -1,9 +1,11 @@
 /** @jsx jsx */
+import { useMemo } from 'react';
 import { jsx } from 'theme-ui';
 import { useScroll } from 'hooks';
 import { navigate } from '@reach/router';
 import { graphql, useStaticQuery } from 'gatsby';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+import { navLinks } from 'static/nav-links';
 
 export const Logo = ({ onCloseNav }) => {
   const { logoImage } = useStaticQuery(graphql`
@@ -23,13 +25,17 @@ export const Logo = ({ onCloseNav }) => {
 
   const handleLogoClick = () => {
     onCloseNav();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    navigate('/');
   };
+
+  const heroItemPath = useMemo(
+    () => navLinks.find((item) => item.path === 'hero').path,
+    [navLinks],
+  );
 
   return (
     <a
-      href="javascript:void(0);"
+      href={`#${heroItemPath}`}
+      data-to-scrollspy-id={heroItemPath}
       sx={{
         height: [
           '40px',
@@ -42,7 +48,7 @@ export const Logo = ({ onCloseNav }) => {
         pl: [3, null, 0],
         transition: 'default',
       }}
-      onClick={() => handleLogoClick()}
+      // onClick={() => handleLogoClick()}
     >
       <GatsbyImage
         image={image}

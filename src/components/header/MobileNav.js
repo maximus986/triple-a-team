@@ -8,7 +8,7 @@ export const MobileNav = ({ showNav, onNavigate }) => (
   <Box
     as="nav"
     sx={{
-      height: showNav ? '250px' : 0,
+      height: showNav ? '260px' : 0,
       overflow: 'hidden',
       transition: 'default',
       display: [null, null, 'none'],

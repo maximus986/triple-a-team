@@ -3,17 +3,22 @@ import { MdNordicWalking } from 'react-icons/md';
 
 export const navLinks = [
   {
-    path: '#aboutUs',
+    path: 'hero',
+    text: 'Hero',
+    icon: AiOutlineApartment,
+  },
+  {
+    path: 'aboutUs',
     text: 'Ko smo mi',
     icon: AiOutlineApartment,
   },
   {
-    path: '#activities',
+    path: 'activities',
     text: 'Aktivnosti',
     icon: MdNordicWalking,
   },
   {
-    path: '#contact',
+    path: 'contact',
     text: 'Kontakt',
     icon: AiOutlineContacts,
   },

@@ -1,15 +1,19 @@
 /** @jsx jsx */
+import React from 'react';
 import { jsx } from 'theme-ui';
 import { AboutUs, Activities, Banner, Contact, Seo } from 'components';
+import ScrollSpy from 'react-ui-scrollspy';
 
 const IndexPage = () => (
-  <div>
+  <>
     <Seo title="3ATeam" />
-    <Banner />
-    <AboutUs />
-    <Activities />
-    <Contact />
-  </div>
+    <ScrollSpy scrollThrottle={100}>
+      <Banner />
+      <AboutUs />
+      <Activities />
+      <Contact />
+    </ScrollSpy>
+  </>
 );
 
 export default IndexPage;
