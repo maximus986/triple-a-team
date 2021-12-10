@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import { SectionContainer } from './SectionContainer';
 import { Grid } from '@theme-ui/components';
 import { Activity } from './Activity';
-import { Target } from './Target';
+import { ScrollTarget } from './ScrollTarget';
 
 export const Activities = () => {
   const {
@@ -33,7 +33,7 @@ export const Activities = () => {
     }
   `);
   return (
-    <Target target="activities">
+    <ScrollTarget target="activities">
       <SectionContainer sectionTitle={activitySectionTitle}>
         <Grid gap={[4]} columns={[1, null, null, null, [(2, '1fr 1fr 1fr')]]}>
           {activities.map((activity) => {
@@ -45,6 +45,6 @@ export const Activities = () => {
           })}
         </Grid>
       </SectionContainer>
-    </Target>
+    </ScrollTarget>
   );
 };

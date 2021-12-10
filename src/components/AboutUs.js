@@ -4,7 +4,7 @@ import { Paragraph } from '@theme-ui/components';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { SectionContainer } from './SectionContainer';
-import { Target } from './Target';
+import { ScrollTarget } from './ScrollTarget';
 
 export const AboutUs = () => {
   const {
@@ -24,10 +24,10 @@ export const AboutUs = () => {
   `);
 
   return (
-    <Target target="aboutUs">
+    <ScrollTarget target="aboutUs">
       <SectionContainer sectionTitle={sectionTitle}>
         <Paragraph sx={{ mx: [4, 0] }}>{aboutUsDescription}</Paragraph>
       </SectionContainer>
-    </Target>
+    </ScrollTarget>
   );
 };

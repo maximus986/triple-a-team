@@ -2,16 +2,16 @@ import { Box } from '@theme-ui/components';
 import React from 'react';
 import { Form } from './form/Form';
 import { SectionContainer } from './SectionContainer';
-import { Target } from './Target';
+import { ScrollTarget } from './ScrollTarget';
 
 export const Contact = () => {
   return (
-    <div id="contact">
+    <ScrollTarget target="contact">
       <SectionContainer sectionTitle="Kontakt">
         <Box sx={{ mx: [4, 0] }}>
           <Form />
         </Box>
       </SectionContainer>
-    </div>
+    </ScrollTarget>
   );
 };

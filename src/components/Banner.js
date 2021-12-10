@@ -11,7 +11,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 import styled from '@emotion/styled';
 import { Container } from 'components';
-import { Target } from './Target';
+import { ScrollTarget } from './ScrollTarget';
 
 export const bannerSliderSettings = {
   autoplay: true,
@@ -46,7 +46,7 @@ export const Banner = () => {
     }
   `);
   return (
-    <Target target="hero">
+    <ScrollTarget target="hero">
       <Slider {...bannerSliderSettings}>
         {allContentfulBanner.nodes.map((banner, i) => {
           const image = getImage(banner.image[0]);
@@ -72,7 +72,7 @@ export const Banner = () => {
           );
         })}
       </Slider>
-    </Target>
+    </ScrollTarget>
   );
 };
 

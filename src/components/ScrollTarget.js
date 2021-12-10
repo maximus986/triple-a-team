@@ -2,7 +2,7 @@
 import React from 'react';
 import { jsx } from 'theme-ui';
 
-export const Target = ({ target, children }) => {
+export const ScrollTarget = ({ target, children }) => {
   return (
     <div
       id={target}
