@@ -2,17 +2,19 @@
 import React from 'react';
 import { Seo, Info } from 'components';
 import { jsx } from 'theme-ui';
-import { GiCheckMark } from 'react-icons/gi';
 import { graphql } from 'gatsby';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 
-// TODO: Query text from contentful
-
-const Success = ({ data: { waterMarkImage } }) => {
+const Success = ({
+  data: {
+    waterMarkImage,
+    contentfulContactSuccess: { title, info, greeting },
+  },
+}) => {
   const image = getImage(waterMarkImage.childImageSharp);
   return (
     <>
-      <Seo title="3ATeam" />
+      <Seo title="Success" />
       <Info>
         <GatsbyImage
           image={image}
@@ -24,13 +26,13 @@ const Success = ({ data: { waterMarkImage } }) => {
           }}
         />
         <h2 sx={{ my: 5, fontSize: [null, null, null, null, null, 11] }}>
-          Poštovani, vaša poruka je uspešno primljena.
+          {title}
         </h2>
         <p sx={{ mb: 3, fontSize: [null, null, null, null, null, 6] }}>
-          Potrudićemo se da vam odgovorimo u što kraćem roku.
+          {info}
         </p>
         <p sx={{ mb: 5, fontSize: [null, null, null, null, null, 6] }}>
-          Srdačno, vaš 3ATeam.
+          {greeting}
         </p>
       </Info>
     </>
@@ -46,6 +48,11 @@ export const PAGE_QUERY = graphql`
       childImageSharp {
         gatsbyImageData(formats: PNG, placeholder: BLURRED)
       }
+    }
+    contentfulContactSuccess {
+      title
+      info
+      greeting
     }
   }
 `;

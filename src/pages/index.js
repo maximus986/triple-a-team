@@ -9,7 +9,7 @@ const ScrollSpy = loadable(() => import('react-ui-scrollspy'));
 
 const IndexPage = () => (
   <>
-    <Seo title="3ATeam" />
+    <Seo title="Početna" />
     <ScrollSpy scrollThrottle={100}>
       <Banner />
       <AboutUs />
