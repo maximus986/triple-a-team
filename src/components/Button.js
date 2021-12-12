@@ -13,6 +13,10 @@ export const Button = ({ variant = 'primary', to, children }) => (
       fontSize: 2,
       color: 'background',
       variant: `buttons.${variant}`,
+      '& a': {
+        display: 'inline-block',
+        width: '100%',
+      },
     }}
   >
     <Link to={to}>{children}</Link>
