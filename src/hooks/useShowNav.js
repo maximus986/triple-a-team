@@ -2,5 +2,5 @@ import { useLocation } from '@reach/router';
 
 export const useShowNav = () => {
   const location = useLocation();
-  return location.pathname !== '/success';
+  return location.pathname !== '/success' || location.pathname !== '404';
 };
