@@ -4,10 +4,12 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://www.yourdomain.tld',
+    siteUrl: 'https://tripleateam.org',
     title: '3ATeam',
-    description: 'Add description for site created using this template',
-    keywords: 'Add keywords for site created using this template',
+    description:
+      '3ATeam je grupa ljudi koji su postali prijatelji, u svojim lutanjima i istraživanjima. Specijalinosti su nam team building-zi, aktivni odmor, uključujući planinarenje, vožnju biciklom, kajak i ture u zemlji i inostranstvu.',
+    keywords:
+      'Aktivni odmor, planinarenje, kajak, vožnja bicikla, adrenalin, avantura, priroda, team building',
     author: 'Aleksandar Maksimovic<aleksandar.maksimovic2608@gmail.com',
   },
   plugins: [
@@ -20,13 +22,21 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-theme-ui',
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: `https://tripleateam.org`,
+        sitemap: `https://tripleateam.org/sitemap.xml`,
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/images/icon.png',
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
@@ -40,19 +50,19 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-contentful`,
+      resolve: 'gatsby-source-contentful',
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: [`Amatic SC:300,400,400i,700`, `Josefin Sans:300,400,400i,700`],
         display: 'swap',
       },
     },
-    `gatsby-plugin-netlify`,
+    'gatsby-plugin-netlify',
   ],
 };
