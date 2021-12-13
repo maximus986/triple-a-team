@@ -47,7 +47,7 @@ export const Logo = ({ onCloseNav }) => {
         pl: [3, null, 0],
         transition: 'default',
       }}
-      // onClick={() => handleLogoClick()}
+      onClick={() => handleLogoClick()}
     >
       <GatsbyImage
         image={image}
