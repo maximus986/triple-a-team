@@ -39,9 +39,9 @@ export const Logo = ({ onCloseNav }) => {
         height: [
           '40px',
           '45px',
-          scroll ? '45px' : ' 65px',
-          scroll ? '55px' : '75px',
-          scroll ? '70px' : '90px',
+          scroll ? '50px' : ' 55px',
+          scroll ? '60px' : '65px',
+          scroll ? '75px' : '80px',
         ],
         display: 'block',
         pl: [3, null, 0],
